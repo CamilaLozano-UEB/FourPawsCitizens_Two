@@ -1,0 +1,16 @@
+#pestanaUno {
+	list-style-type: none;
+}
+
+.linkStyle {
+	text-decoration: none;
+	color: #d1d8e0;
+	background-color: #3867d6;
+	font-family: Arial;
+	font-size: 20px;
+	width: 30px;
+	position: relative;
+	top: 40px;
+	left: 40px;
+	
+}
