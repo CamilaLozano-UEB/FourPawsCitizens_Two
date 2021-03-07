@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="javascript/form.js"></script>
 	<title>Modificación mascotas</title>
 	<script>
 		function begin() {
@@ -36,15 +37,15 @@
 				<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
 				<br>
 				<br>
-				<label for "adress">Digite la dirección:</label><br>
-				<input type="text" name="adress" size="30" id="owner" placeholder="Ej: Cr 9 # 111 - 11" required>
+				<label for "address">Digite la dirección:</label><br>
+				<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11" required>
 				<br>
 				<br>
 				<section id "image" required>
 					Arrastre la imagen
 				</section>
 				<p align="center">
-					<input type="submit" value="Actualizar mascota">
+					<button type="button" onclick="getformUp()">Actualizar mascota</button>
 				</p>
 			</fieldset>
 		</form>
