@@ -1,3 +1,21 @@
-.titles{
-	text-align: center;
+#pestanaUno {
+	list-style-type: none;
+	width: 18%;
+	height: 90px;
+	color: #d1d8e0;
+	background-color: #3867d6;
+	top: 40px;
+	left: 40px;
 }
+
+.linkStyle {
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 20px;
+	width: 18%;
+	position: relative;
+	text-decoration: none;
+	top: 40px;
+	left: 40px;
+}
+
