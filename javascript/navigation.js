@@ -12,4 +12,3 @@ document.write("\
 			<a class=\"nav-link\" href=\"Tablepets.html\">Tabla de Mascotas</a>\
 		</li>\
 	</ul>");
-	console.log("asdas")
