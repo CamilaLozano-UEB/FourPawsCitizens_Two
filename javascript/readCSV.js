@@ -1,23 +1,22 @@
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
-
 	resolveCharsetErrors(data);
 
-	console.log(data);
-	let results;
-	for (i = 0; i <= data.length / 50; i++) {
-		if (i == 0) {
-			var part = data.slice(0, data.length / i);
-			results[i] = part;
-			var next = data.length / i;
-		} else if (i > 0 && i < (data.length / 50) - 1) {
-			var part = data.slice(next, next + 50);
-			results[i] = part;
-			var next = next + 50;
-		} else if (i == (data.length / 50) - 1) {
-			var part = data.slice(next, data.length);
-			results[i] = part;
+	var num = parseInt(data.length / 50) + 1;
+	console.log(num);
+	for (var i = 0; i < num; i++) {
+		createNavigation(i);
+		var tabla = createTable(i);
+		if (i === (num - 1) && (i * 50) != data.length) {
+			var subList = data.slice(i * 50, data.length);
+			tabla.appendChild(createThead());
+			tabla.appendChild(createTable(subList, i * 50));
+		} else {
+			var subList = data.slice(i * 50, (i + 1) * 50);
+			for (var j = 0; j < subList.length; j++) { console.log(subList["sex"]) }
+			tabla.appendChild(createThead());
+			tabla.appendChild(createBody(subList, i * 50));
 		}
-
+		document.body.appendChild(tabla);
 	}
 });
 
@@ -34,25 +33,25 @@ function resolveCharsetErrors(data) {
 /*Promesa fetch api jalar recursos dek server, then funcion que se ejecuta si la función está correcta*/
 function createNavigation(indice) {
 	var liElement = document.createElement("li");
-	liElement.className = "page-item";
 
 	var aChild = document.createElement("a");
 	aChild.className = "page-link";
-	aChild.href = "#tabla" + indice + 1;
+	aChild.href = "#tabla" + (indice + 1);
 	aChild.text = indice + 1;
 
 	liElement.appendChild(aChild);
 	document.getElementById("pageItems").appendChild(liElement);
 }
+
 function createTable(indice) {
 	var table = document.createElement("table");
 	table.className = "table table-striped";
-	table.id = "tabla" + indice;
+	table.id = "tabla" + (indice + 1);
 	return table;
 }
 
 function createThead() {
-	var names = ["microchip", "specie", "sex", "size", "race", "potentDangerous", "neighborhood", "owner", "address", "picture"];
+	var names = ["#", "microchip", "specie", "sex", "size", "race", "potentDangerous", "neighborhood", "owner", "address", "picture"];
 	var tHead = document.createElement("thead");
 	var tr = document.createElement("tr");
 	for (var i = 0; i < names.length; i++) {
@@ -65,7 +64,7 @@ function createThead() {
 	return tHead;
 }
 
-function createTable(petsSubList, indice) {
+function createBody(petsSubList, indice) {
 	/*microchip, specie, sex, size, race, potentDangerous, neighborhood, owner, address, picture*/
 	var tBody = document.createElement("tbody");
 	for (var i = 0; i < petsSubList.length; i++) {
@@ -76,7 +75,7 @@ function createTable(petsSubList, indice) {
 		tr.appendChild(th);
 		for (const property in petsSubList[i]) {
 			var td = document.createElement("td");
-			td.textContent = petsSubList[property];
+			td.textContent = petsSubList[i][property];
 			tr.appendChild(td);
 		}
 		tBody.appendChild(tr);
