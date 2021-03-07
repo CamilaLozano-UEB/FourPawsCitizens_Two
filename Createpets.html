@@ -20,12 +20,12 @@
 			<fieldset>
 				<legend> Formulario de Registro de mascotas </legend>
 				<label for="microchip">Ingrese su microchip:</label><br>
-				<input type="text" name="microchip" size="30" id="microchip" placeholder="Ej: 123456789">
+				<input type="text" name="microchip" size="30" id="microchip" placeholder="Ej: 123456789" required>
 				<br>
 				<br>
 
 				<label for="species">"Seleccione la especie:"</label><br>
-				<select name="species" id="species">
+				<select name="species" id="species" required>
 					<option value="" selected="selected">Seleccione :</option>
 					<option value="2">Canino</option>
 					<option value="3">Felino</option>
@@ -35,7 +35,7 @@
 				<br>
 
 				<label for="sex"> Seleccione el sexo:</label><br>
-				<select name="sex" id="sex">
+				<select name="sex" id="sex" required>
 					<option value="" selected="selected">Seleccione :</option>
 					<option value="2">Macho</option>
 					<option value="3">Hembra</option>
@@ -44,7 +44,7 @@
 				<br>
 
 				<label for "size">Seleccione el tamaño:</label><br>
-				<select name="size" id="size">
+				<select name="size" id="size" required>
 					<option value="" selected="selected">Seleccione :</option>
 					<option value="2">Miniatura</option>
 					<option value="3">Pequeño</option>
@@ -56,7 +56,7 @@
 				<br>
 
 				<label for "danger">Seleccione si es potencialmente peligroso:</label><br>
-				<select name="danger" id="danger">
+				<select name="danger" id="danger" required>
 					<option value="" selected="selected">Seleccione :</option>
 					<option value="2">Si</option>
 					<option value="3">No</option>
@@ -65,7 +65,7 @@
 				<br>
 
 				<label for "neighborhood">Seleccione la localidad:</label><br>
-				<select id="neighborhood" name="neighborhood">
+				<select id="neighborhood" name="neighborhood" required>
 					<option value="" selected="selected">Seleccione :</option>
 					<option value="2">Usaquen</option>
 					<option value="3">Chapinero</option>
@@ -93,20 +93,20 @@
 				<br>
 
 				<label for "race">Digite la raza:</label><br>
-				<input type="text" name="race" size="30" id="race" placeholder="Ej: Labrador">
+				<input type="text" name="race" size="30" id="race" placeholder="Ej: Labrador" required>
 				<br>
 				<br>
 
 				<label for "owner">Digite el nombre del dueño:</label><br>
-				<input type="text" name="owner" size="30" id="owner" placeholder="Ej: José Martines">
+				<input type="text" name="owner" size="30" id="owner" placeholder="Ej: José Martines" required>
 				<br>
 				<br>
 				<label for "adress">Digite la dirección:</label><br>
-				<input type="text" name="adress" size="30" id="owner" placeholder="Ej: Cr 7 # 100 - 10">
+				<input type="text" name="adress" size="30" id="owner" placeholder="Ej: Cr 7 # 100 - 10" required>
 				<br>
 				<br>
 				<p align="center">
-					<input type="submit" value="Enviar">
+					<input type="submit" value="Registrar mascota">
 				</p>
 			</fieldset>
 		</form>
