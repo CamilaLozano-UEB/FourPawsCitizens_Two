@@ -3,6 +3,22 @@ d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
 
 	console.log(data);
+	let results;
+	for (i = 0; i <= data.length / 50; i++) {
+		if (i == 0) {
+			var part = data.slice(0, data.length / i);
+			results[i] = part;
+			var next = data.length / i;
+		} else if (i > 0 && i < (data.length / 50) - 1) {
+			var part = data.slice(next, next + 50);
+			results[i] = part;
+			var next = next + 50;
+		} else if (i == (data.length / 50) - 1) {
+			var part = data.slice(next, data.length);
+			results[i] = part;
+		}
+
+	}
 });
 
 
