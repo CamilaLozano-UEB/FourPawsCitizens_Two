@@ -38,7 +38,7 @@
 		<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
-				<form action="Createpatsform" method="post" autocomplete="off">
+				<form action="Createpatsform" method="post" autocomplete="off" id="formsC">
 					<fieldset>
 						<legend> Formulario de Registro de mascotas </legend>
 						<label for="microchip">Ingrese su microchip:</label><br>
@@ -67,13 +67,8 @@
 						<br>
 
 						<label for "size">Seleccione el tamaño:</label><br>
-						<select name="size" id="size" required>
-							<option value="" selected="selected">Seleccione :</option>
-							<option value="2">Miniatura</option>
-							<option value="3">Pequeño</option>
-							<option value="4">Mediano</option>
-							<option value="5">Grande</option>
-							<option value="6">Muy Grande</option>
+						<select name="size" id="size" onchange="changeRace()" required>
+							<option value=0>Elija primero la especie</option>
 						</select>
 						<br>
 						<br>
@@ -115,8 +110,10 @@
 						<br>
 						<br>
 
-						<label for "race">Digite la raza:</label><br>
-						<input type="text" name="race" size="30" id="race" placeholder="Ej: Labrador" required>
+						<label for "size">Seleccione la raza:</label><br>
+						<select name=race id="race" required>
+							<option value=0>Elija primero el tamaño</option>
+						</select>
 						<br>
 						<br>
 
