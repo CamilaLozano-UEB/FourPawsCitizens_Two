@@ -3,8 +3,8 @@ import { createBody } from "./tables.js"
 var previousTenLi = document.getElementById("previousTen");
 var previousLi = document.getElementById("previous");
 var pageLi = document.getElementById("page");
-var nextLi = document.getElementById("nex");
-var nextTenLi = document.getElementById("nex10");
+var nextLi = document.getElementById("next");
+var nextTenLi = document.getElementById("next10");
 var totalPages = document.getElementById("total");
 var dataPets = [];
 
