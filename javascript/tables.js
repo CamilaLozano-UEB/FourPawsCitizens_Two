@@ -1,32 +1,14 @@
-function createTable(indice) {
-	var table = document.createElement("table");
-	table.className = "table table-striped";
-	table.id = "tabla" + (indice + 1);
-	return table;
-}
-
-function createThead() {
-	var names = ["#", "microchip", "specie", "sex", "size", "race", "potentDangerous", "neighborhood", "owner", "address", "picture"];
-	var tHead = document.createElement("thead");
-	var tr = document.createElement("tr");
-	for (var i = 0; i < names.length; i++) {
-		var th = document.createElement("th");
-		th.scope = "col";
-		th.textContent = names[i];
-		tr.appendChild(th);
-	}
-	tHead.appendChild(tr);
-	return tHead;
-}
-
 function createBody(petsSubList, indice) {
-	/*microchip, specie, sex, size, race, potentDangerous, neighborhood, owner, address, picture*/
+	if (document.getElementById("tBody") !== null) {
+		document.getElementById("tablePets").removeChild(document.getElementById("tBody"));
+	}
 	var tBody = document.createElement("tbody");
+	tBody.id = "tBody";
 	for (var i = 0; i < petsSubList.length; i++) {
 		var tr = document.createElement("tr");
 		var th = document.createElement("th");
 		th.scope = "row";
-		th.textContent = indice + i;
+		th.textContent = (indice * 50) + i;
 		tr.appendChild(th);
 		for (const property in petsSubList[i]) {
 			var td = document.createElement("td");
@@ -35,5 +17,7 @@ function createBody(petsSubList, indice) {
 		}
 		tBody.appendChild(tr);
 	}
-	return tBody;
+	document.getElementById("tablePets").appendChild(tBody);
 }
+
+export { createBody };

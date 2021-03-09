@@ -1,32 +1,9 @@
-import { Manager } from "./javascript/pets.js";
-import { assignTableNavigationValues } from "./javascript/TableNavigation.js";
+import { Manager } from "./pets.js";
+import { assignTableNavigationValues } from "./TableNavigation.js";
 
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
-
-
 	resolveCharsetErrors(data);
-	var num = Manager.createSubLists(data).length;
-	console.log(num);
-	assignTableNavigationValues(num);
-
-
-
-
-	/*	for (var i = 0; i < num; i++) {
-			createNavigation(i);
-			var tabla = createTable(i);
-			if (i === (num - 1) && (i * 50) != data.length) {
-				var subList = data.slice(i * 50, data.length);
-				tabla.appendChild(createThead());
-				tabla.appendChild(createTable(subList, i * 50));
-			} else {
-				var subList = data.slice(i * 50, (i + 1) * 50);
-				for (var j = 0; j < subList.length; j++) { console.log(subList["sex"]) }
-				tabla.appendChild(createThead());
-				tabla.appendChild(createBody(subList, i * 50));
-			}
-			document.body.appendChild(tabla);
-		}*/
+	assignTableNavigationValues(Manager.createSubLists(data));
 });
 
 function resolveCharsetErrors(data) {
