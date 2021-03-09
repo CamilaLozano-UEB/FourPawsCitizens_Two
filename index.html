@@ -9,6 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="javascript/form.js"></script>
 
 </head>
 
@@ -163,37 +164,28 @@
 				</form>
 			</div>
 		</div>
-		
+
 		<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 			<h3 class="titles">Busqueda de mascotas</h3>
 			<h5>Filtrar</h5>
-			<form>
-				<label for="specie">Example multiple select</label>
-				<select id="specie">
-					<option>Seleccione</option>
-					<option>Canino</option>
-					<option>Felino</option>
-					<option>No identificado</option>
+			<form name="formT" id=="formT">
+				<label for="species">Seleccione la especie:</label><br>
+				<select name="species" id="species" onchange="changeSize()" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Canino</option>
+					<option value="3">Felino</option>
+					<option value="4">No identificado</option>
 				</select>
-				<label for="size">Example multiple select</label>
-				<select id="size">
-					<option>Seleccione</option>
-					<option>Muy grande</option>
-					<option>Grande</option>
-					<option>Mediano</option>
-					<option>Pequeño</option>
-					<option>Miniatura</option>
-					<option>No identificado</option>
+				<br>
+
+				<label for "size">Seleccione el tamaño:</label><br>
+				<select name="size" id="size" onchange="changeRace()" required>
+					<option value=0>Elija primero la especie</option>
 				</select>
-				<label for="race">Example multiple select</label>
-				<select id="race">
-					<option>Seleccione</option>
-					<option>Muy grande</option>
-					<option>Grande</option>
-					<option>Mediano</option>
-					<option>Pequeño</option>
-					<option>Miniatura</option>
-					<option>No identificado</option>
+				<br>
+				<label for "size">Seleccione la raza:</label><br>
+				<select name=race id="race" required>
+					<option value=0>Elija primero el tamaño</option>
 				</select>
 			</form>
 			<nav>
