@@ -12,24 +12,227 @@
 
 </head>
 
+<nav>
+	<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+				aria-selected="true">Registrar Mascota</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+				aria-selected="false">Actualizar Mascota</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+				aria-selected="false">Tabla de Mascotas</a>
+		</li>
+	</ul>
+</nav>
+
 <body>
-	<script src="javascript/navigation.js"></script>
-	<h2>Four Pets Citizens</h2>
+	<script type="module" src="javascript/readCSV.js"></script>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+			<h2 class="titles">Four Pets Citizens</h2>
+			<div align="center">
+				<form action="Createpatsform" method="post" autocomplete="off">
+					<fieldset>
+						<legend> Formulario de Registro de mascotas </legend>
+						<label for="microchip">Ingrese su microchip:</label><br>
+						<input type="text" name="microchip" size="30" id="microchip" placeholder="Ej: 123456789"
+							required>
+						<br>
+						<br>
 
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<div id="Createpets" class="container tab-pane active"><br>
+						<label for="species">"Seleccione la especie:"</label><br>
+						<select name="species" id="species" required>
+							<option value="" selected="selected">Seleccione :</option>
+							<option value="2">Canino</option>
+							<option value="3">Felino</option>
+							<option value="4">No identificado</option>
+						</select>
+						<br>
+						<br>
 
-			</div>
-			<div id="Upgradepets" class="container tab-pane fade"><br>
+						<label for="sex"> Seleccione el sexo:</label><br>
+						<select name="sex" id="sex" required>
+							<option value="" selected="selected">Seleccione :</option>
+							<option value="2">Macho</option>
+							<option value="3">Hembra</option>
+						</select>
+						<br>
+						<br>
 
-			</div>
-			<div id="Tablepets" class="container tab-pane fade"><br>
+						<label for "size">Seleccione el tamaño:</label><br>
+						<select name="size" id="size" required>
+							<option value="" selected="selected">Seleccione :</option>
+							<option value="2">Miniatura</option>
+							<option value="3">Pequeño</option>
+							<option value="4">Mediano</option>
+							<option value="5">Grande</option>
+							<option value="6">Muy Grande</option>
+						</select>
+						<br>
+						<br>
 
+						<label for "danger">Seleccione si es potencialmente peligroso:</label><br>
+						<select name="danger" id="danger" required>
+							<option value="" selected="selected">Seleccione :</option>
+							<option value="2">Si</option>
+							<option value="3">No</option>
+						</select>
+						<br>
+						<br>
+
+						<label for "neighborhood">Seleccione la localidad:</label><br>
+						<select id="neighborhood" name="neighborhood" required>
+							<option value="" selected="selected">Seleccione :</option>
+							<option value="2">Usaquen</option>
+							<option value="3">Chapinero</option>
+							<option value="4">Santa Fe</option>
+							<option value="5">San Cristobal</option>
+							<option value="6">Usme</option>
+							<option value="7">Tunjuelito</option>
+							<option value="8">Bosa</option>
+							<option value="9">Kennedy</option>
+							<option value="10">Fontibon</option>
+							<option value="11">Engativa</option>
+							<option value="12">Suba</option>
+							<option value="13">Barrios Unidos</option>
+							<option value="14">Teusaquillo</option>
+							<option value="15">Los Martires</option>
+							<option value="16">Antonio Nariño</option>
+							<option value="17">Puente Aranda</option>
+							<option value="18">La Candelaria</option>
+							<option value="19">Uribe</option>
+							<option value="20">Ciudad Bolivar</option>
+							<option value="21">Sumapaz</option>
+							<option value="22">Municipios aledaños</option>
+						</select>
+						<br>
+						<br>
+
+						<label for "race">Digite la raza:</label><br>
+						<input type="text" name="race" size="30" id="race" placeholder="Ej: Labrador" required>
+						<br>
+						<br>
+
+						<label for "owner">Digite el nombre del dueño:</label><br>
+						<input type="text" name="owner" size="30" id="owner" placeholder="Ej: José Martines" required>
+						<br>
+						<br>
+						<label for "address">Digite la dirección:</label><br>
+						<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 7 # 100 - 10"
+							required>
+						<br>
+						<br>
+						<p align="center">
+							<button type="button" onclick="getformCreate()">Registrar mascota</button>
+						</p>
+					</fieldset>
+				</form>
 			</div>
 		</div>
-	</div>
+		<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			<h2 class="titles">Four Pets Citizens</h2>
+			<div align="center">
+				<form action="Createpatsform" method="post" autocomplete="off">
+					<fieldset>
+						<legend> Formulario de Actualización de mascotas </legend>
+						<label for "race">Digite la raza:</label><br>
+						<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
+						<br>
+						<br>
 
+						<label for "owner">Digite el nombre del dueño:</label><br>
+						<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
+						<br>
+						<br>
+						<label for "address">Digite la dirección:</label><br>
+						<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11"
+							required>
+						<br>
+						<br>
+						<section id "image" required>
+							Arrastre la imagen
+						</section>
+						<p align="center">
+							<button type="button" onclick="getformUp()">Actualizar mascota</button>
+						</p>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			<h3 class="titles">Busqueda de mascotas</h3>
+			<h5>Filtrar</h5>
+			<form>
+				<label for="specie">Example multiple select</label>
+				<select id="specie">
+					<option>Seleccione</option>
+					<option>Canino</option>
+					<option>Felino</option>
+					<option>No identificado</option>
+				</select>
+				<label for="size">Example multiple select</label>
+				<select id="size">
+					<option>Seleccione</option>
+					<option>Muy grande</option>
+					<option>Grande</option>
+					<option>Mediano</option>
+					<option>Pequeño</option>
+					<option>Miniatura</option>
+					<option>No identificado</option>
+				</select>
+				<label for="race">Example multiple select</label>
+				<select id="race">
+					<option>Seleccione</option>
+					<option>Muy grande</option>
+					<option>Grande</option>
+					<option>Mediano</option>
+					<option>Pequeño</option>
+					<option>Miniatura</option>
+					<option>No identificado</option>
+				</select>
+			</form>
+			<nav>
+				<ul class="pagination justify-content-center">
+					<li id="previousTen" class="page-item">
+						<a class="page-link" href="#">&laquo;10&laquo;</a>
+					</li>
+					<li id="previous" class="page-item">
+						<a class="page-link" href="#">&laquo;</a>
+					</li>
+					<li id="page" class="page-item disabled"><a class="page-link" href="#">1</a></li>
+					<li id="nex" class="page-item">
+						<a class="page-link" href="#">&raquo;</a>
+					</li>
+					<li id="nex10" class="page-item">
+						<a class="page-link" href="#">&raquo;10&raquo;</a>
+					</li>
+					<li id="total" class="page-item disabled"><a class="page-link">1</a></li>
+				</ul>
+			</nav>
+
+			<table id="tablePets" class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">microchip</th>
+						<th scope="col">specie</th>
+						<th scope="col">sex</th>
+						<th scope="col">size</th>
+						<th scope="col">potentDangerous</th>
+						<th scope="col">neighborhood</th>
+						<th scope="col">race</th>
+						<th scope="col">owner</th>
+						<th scope="col">address</th>
+						<th scope="col">picture</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
 </body>
 
 </html>
