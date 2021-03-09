@@ -1,76 +1,117 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Registro de Mascotas</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="javascript/form.js"></script>
 </head>
 
 <body>
 	<script src="javascript/navigation.js"></script>
 	<h2 class="titles">Four Pets Citizens</h2>
-	<form action="Createpatsform" method="post">
-		Ingrese su microchip:
-		<input type="text" name="microchip" size="30" id="microchip"><br>
-		Seleccione la especie:
-		<select name="species" id="species">
-			<option value="1">CANINO</option>
-			<option value="2">FELINO</option>
+	<div align="center">
+		<form action="Createpatsform" method="post" autocomplete="off">
+			<fieldset>
+				<legend> Formulario de Registro de mascotas </legend>
+				<label for="microchip">Ingrese su microchip:</label><br>
+				<input type="text" name="microchip" size="30" id="microchip" placeholder="Ej: 123456789" required>
+				<br>
+				<br>
 
-		</select>
-		<br>
-		Seleccione la sexo:
-		<select name="sex" id="sex">
-			<option value="1">FEMENINO</option>
-			<option value="2">MASCULINO</option>
+				<label for="species">"Seleccione la especie:"</label><br>
+				<select name="species" id="species" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Canino</option>
+					<option value="3">Felino</option>
+					<option value="4">No identificado</option>
+				</select>
+				<br>
+				<br>
 
-		</select><br>
-		Seleccione la tama�o:
-		<select name="size" id="size">
-			<option value="1">MINIATURA</option>
-			<option value="2">PEQUE�O</option>
-			<option value="3">MEDIANO</option>
-			<option value="4">GRANDE</option>
-			<option value="5">MUY GRANDE</option>
-		</select><br>
-		Seleccione si es peligroso:
-		<select name="size" id="size">
-			<option value="1">SI</option>
-			<option value="2">NO</option>
-		</select><br>
-		Seleccione la localidad:
-		<select id="neighborhood" name="neighborhood">
-			<option value="" selected="selected">Seleccione :</option>
-			<option value="2">USAQUEN</option>
-			<option value="3">CHAPINERO</option>
-			<option value="4">SANTA FE</option>
-			<option value="5">SAN CRISTOBAL</option>
-			<option value="6">USME</option>
-			<option value="7">TUNJUELITO</option>
-			<option value="8">BOSA</option>
-			<option value="9">KENNEDY</option>
-			<option value="10">FONTIBON</option>
-			<option value="11">ENGATIVA</option>
-			<option value="12">SUBA</option>
-			<option value="13">BARRIOS UNIDOS</option>
-			<option value="14">TEUSAQUILLO</option>
-			<option value="15">LOS MARTIRES</option>
-			<option value="16">ANTONIO NARI�O</option>
-			<option value="17">PUENTE ARANDA</option>
-			<option value="18">LA CANDELARIA</option>
-			<option value="19">URIBE</option>
-			<option value="20">CIUDAD BOLIVAR</option>
-			<option value="21">SUMAPAZ</option>
-			<option value="22">MUNICIPIOS ALEDA�OS</option>
-		</select>
-		<br>
-		<input type="submit" value="Enviar">
-	</form>
+				<label for="sex"> Seleccione el sexo:</label><br>
+				<select name="sex" id="sex" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Macho</option>
+					<option value="3">Hembra</option>
+				</select>
+				<br>
+				<br>
+
+				<label for "size">Seleccione el tamaño:</label><br>
+				<select name="size" id="size" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Miniatura</option>
+					<option value="3">Pequeño</option>
+					<option value="4">Mediano</option>
+					<option value="5">Grande</option>
+					<option value="6">Muy Grande</option>
+				</select>
+				<br>
+				<br>
+
+				<label for "danger">Seleccione si es potencialmente peligroso:</label><br>
+				<select name="danger" id="danger" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Si</option>
+					<option value="3">No</option>
+				</select>
+				<br>
+				<br>
+
+				<label for "neighborhood">Seleccione la localidad:</label><br>
+				<select id="neighborhood" name="neighborhood" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Usaquen</option>
+					<option value="3">Chapinero</option>
+					<option value="4">Santa Fe</option>
+					<option value="5">San Cristobal</option>
+					<option value="6">Usme</option>
+					<option value="7">Tunjuelito</option>
+					<option value="8">Bosa</option>
+					<option value="9">Kennedy</option>
+					<option value="10">Fontibon</option>
+					<option value="11">Engativa</option>
+					<option value="12">Suba</option>
+					<option value="13">Barrios Unidos</option>
+					<option value="14">Teusaquillo</option>
+					<option value="15">Los Martires</option>
+					<option value="16">Antonio Nariño</option>
+					<option value="17">Puente Aranda</option>
+					<option value="18">La Candelaria</option>
+					<option value="19">Uribe</option>
+					<option value="20">Ciudad Bolivar</option>
+					<option value="21">Sumapaz</option>
+					<option value="22">Municipios aledaños</option>
+				</select>
+				<br>
+				<br>
+
+				<label for "race">Digite la raza:</label><br>
+				<input type="text" name="race" size="30" id="race" placeholder="Ej: Labrador" required>
+				<br>
+				<br>
+
+				<label for "owner">Digite el nombre del dueño:</label><br>
+				<input type="text" name="owner" size="30" id="owner" placeholder="Ej: José Martines" required>
+				<br>
+				<br>
+				<label for "address">Digite la dirección:</label><br>
+				<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 7 # 100 - 10" required>
+				<br>
+				<br>
+				<p align="center">
+					<button type="button" onclick="getformCreate()">Registrar mascota</button>
+				</p>
+			</fieldset>
+		</form>
+	</div>
 
 </body>
 
