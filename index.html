@@ -10,6 +10,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v6.min.js"></script>
 	<script src="javascript/form.js"></script>
+	<script src="draganddrop.js"></script>
+
 
 </head>
 
@@ -127,6 +129,11 @@
 							required>
 						<br>
 						<br>
+						<label for "image_creation"> Imagen de la mascota</label><br>
+						<input type="file" id="image_creation" ondrop="dropHandler(event);">
+						</input>
+						<br>
+						<br>
 						<p align="center">
 							<button type="button" onclick="getformCreate()">Registrar mascota</button>
 						</p>
@@ -154,9 +161,11 @@
 							required>
 						<br>
 						<br>
-						<section id "image" required>
-							Arrastre la imagen
-						</section>
+						<label for "image_upgrade"> Imagen de la mascota</label><br>
+						<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
+						<br>
+						<br>
+						</input>
 						<p align="center">
 							<button type="button" onclick="getformUp()">Actualizar mascota</button>
 						</p>
