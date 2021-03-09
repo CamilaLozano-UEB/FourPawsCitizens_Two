@@ -121,6 +121,131 @@ function changeRaceCat() {
 	}
 	document.formT.race.options[0].selected = true
 }
+function changeSize() {
+	var selectsize
+	selectsize = document.formT.species[document.formT.species.selectedIndex].value
+	if (selectsize == 2) {
+		choosesizes = sizes[1]
+		numbersizes = choosesizes.length
+		document.formT.size.length = numbersizes
+		for (i = 0; i < numbersizes; i++) {
+			document.formT.size.options[i].value = i
+			document.formT.size.options[i].text = choosesizes[i]
+		}
+	} else if (selectsize == 3) {
+		choosesizes = sizes[2]
+		numbersizes = choosesizes.length
+		document.formT.size.length = numbersizes
+		for (i = 0; i < numbersizes; i++) {
+			document.formT.size.options[i].value = i
+			document.formT.size.options[i].text = choosesizes[i]
+		}
+	} else if (selectsize == 4) {
+		choosesizes = sizes[3]
+		numbersizes = choosesizes.length
+		document.formT.size.length = numbersizes
+		for (i = 0; i < numbersizes; i++) {
+			document.formT.size.options[i].value = i
+			document.formT.size.options[i].text = choosesizes[i]
+		}
+	} else {
+		document.formT.size.length = 1
+		document.formT.size.options[0].value = 0
+		document.formT.size.options[0].text = "-"
+	}
+	document.formT.size.options[0].selected = true
+	document.formT.race.length = 1
+	document.formT.race.options[0].value = 0
+	document.formT.race.options[0].text = "Elija primero el tamaño"
+}
+function changeRaceC() {
+	selectsize = document.formC.species[document.formC.species.selectedIndex].value
+	if (selectsize == 2) {
+		changeRaceDogC()
+	} else if (selectsize == 3) {
+		changeRaceCatC()
+	} else {
+		document.formT.race.length = mistery.length
+		for (i = 0; i < mistery.length; i++) {
+			document.formC.race.options[i].value = i
+			document.formC.race.options[i].text = mistery[i]
+		}
+	}
+}
+
+function changeRaceDogC() {
+	var selectRace
+	selectRace = document.formC.size[document.formC.size.selectedIndex].value
+	if (selectRace != 0) {
+		chooseRace = dogRace[selectRace]
+		numberRace = chooseRace.length
+		document.formC.race.length = numberRace
+		for (i = 0; i < numberRace; i++) {
+			document.formC.race.options[i].value = i
+			document.formC.race.options[i].text = chooseRace[i]
+		}
+	} else {
+		document.formC.race.length = 1
+		document.formC.race.options[0].value = 0
+		document.formC.race.options[0].text = "-"
+	}
+	document.formC.race.options[0].selected = true
+}
+function changeRaceCatC() {
+	var selectRace
+	selectRace = document.formC.size[document.formC.size.selectedIndex].value
+	if (selectRace != 0) {
+		chooseRace = catRace[selectRace]
+		numberRace = chooseRace.length
+		document.formC.race.length = numberRace
+		for (i = 0; i < numberRace; i++) {
+			document.formC.race.options[i].value = i
+			document.formC.race.options[i].text = chooseRace[i]
+		}
+	} else {
+		document.formC.race.length = 1
+		document.formC.race.options[0].value = 0
+		document.formC.race.options[0].text = "-"
+	}
+	document.formC.race.options[0].selected = true
+} 
+function changeSizeC() {
+	var selectsize
+	selectsize = document.formC.species[document.formC.species.selectedIndex].value
+	if (selectsize == 2) {
+		choosesizes = sizes[1]
+		numbersizes = choosesizes.length
+		document.formC.size.length = numbersizes
+		for (i = 0; i < numbersizes; i++) {
+			document.formC.size.options[i].value = i
+			document.formC.size.options[i].text = choosesizes[i]
+		}
+	} else if (selectsize == 3) {
+		choosesizes = sizes[2]
+		numbersizes = choosesizes.length
+		document.formC.size.length = numbersizes
+		for (i = 0; i < numbersizes; i++) {
+			document.formC.size.options[i].value = i
+			document.formC.size.options[i].text = choosesizes[i]
+		}
+	} else if (selectsize == 4) {
+		choosesizes = sizes[3]
+		numbersizes = choosesizes.length
+		document.formC.size.length = numbersizes
+		for (i = 0; i < numbersizes; i++) {
+			document.formC.size.options[i].value = i
+			document.formC.size.options[i].text = choosesizes[i]
+		}
+	} else {
+		document.formC.size.length = 1
+		document.formC.size.options[0].value = 0
+		document.formC.size.options[0].text = "-"
+	}
+	document.formC.size.options[0].selected = true
+	document.formC.race.length = 1
+	document.formC.race.options[0].value = 0
+	document.formC.race.options[0].text = "Elija primero el tamaño"
+}
 getformCreate = function() {
 	var microchip = document.getElementById("microchip").value;
 	var species = document.getElementById("species").value;
