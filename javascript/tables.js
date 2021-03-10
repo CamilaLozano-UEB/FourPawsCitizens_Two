@@ -23,4 +23,8 @@ function createBody(petsSubList, indice) {
 	document.getElementById("tablePets").appendChild(tBody);
 }
 
+
+
+
+
 export { createBody };

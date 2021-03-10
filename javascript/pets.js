@@ -2,7 +2,7 @@ class Manager {
 	constructor(data) {
 		this.pets = data;
 	}
-	
+
 	static getformCreate(data) {
 		var microchip = document.getElementById("microchip").value;
 		var species = document.getElementById("species").value;
@@ -15,7 +15,6 @@ class Manager {
 		var address = document.getElementById("address").value;
 
 		data.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
-		return data;
 	}
 	static getformUp(data) {
 		//	var image= document.getElementById("image").value;
@@ -30,17 +29,18 @@ class Manager {
 				data[i]["address"] = address;
 				//data[i]["image"] = image;
 			}
-
 		}
 		return data;
-
 	}
+
 	static createSubLists(data) {
 		var num = parseInt(data.length / 50) + 1;
 		var bidSublist = [];
 		for (var i = 0; i < num; i++) {
-			if (i === (num - 1) && (i * 50) != data.length) {
+			if (i === (num - 1) && (i * 50) !== data.length) {
 				bidSublist[i] = data.slice(i * 50, data.length);
+			} else if ((i * 50) === data.length) {
+				break;
 			} else {
 				bidSublist[i] = data.slice(i * 50, (i + 1) * 50);
 			}
@@ -48,8 +48,15 @@ class Manager {
 		return bidSublist
 	}
 
+	fiterFromMultipleFields(species, size, race, neighborhood) {
+		
+	}
+
 	get data() {
 		return data;
 	}
+
+
+
 }
 export { Manager };
