@@ -1,4 +1,6 @@
 
+// Lectura y carga del csv
+
 import { Manager } from "./pets.js";
 import { assignTableNavigationValues } from "./TableNavigation.js";
 
