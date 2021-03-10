@@ -2,6 +2,7 @@ class Manager {
 	constructor(data) {
 		this.pets = data;
 	}
+	
 	static getformCreate(data) {
 		var microchip = document.getElementById("microchip").value;
 		var species = document.getElementById("species").value;
