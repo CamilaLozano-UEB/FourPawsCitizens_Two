@@ -1,3 +1,6 @@
+
+//Manejo y creación de la paginación
+
 import { createBody } from "./tables.js"
 
 var previousTenLi = document.getElementById("previousTen");
