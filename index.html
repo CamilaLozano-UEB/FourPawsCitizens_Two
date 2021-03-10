@@ -15,7 +15,7 @@
 
 </head>
 
-//Manejo de pestañas en la página principa en html
+<!--Manejo de pestañas en la página principa en html-->
 
 <nav>
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -41,7 +41,7 @@
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
 
-				//Formulario de registro de nuevas mascotas
+				<!--Formulario de registro de nuevas mascotas-->
 
 				<form action="Createpatsform" method="post" autocomplete="off" id="formC" name="formC">
 					<fieldset>
@@ -131,9 +131,11 @@
 							required>
 						<br>
 						<br>
-						<label for "image_creation"> Imagen de la mascota</label><br>
-						<input type="file" id="image_creation" ondrop="dropHandler(event);">
-						</input>
+						<section id="section_creation" name="section_creation">
+							<label for "image_creation"> Imagen de la mascota</label><br>
+							<input type="file" id="image_creation" ondrop="dropHandler(event);">
+							</input>
+						</section>
 						<br>
 						<br>
 						<p align="center">
@@ -144,7 +146,7 @@
 			</div>
 		</div>
 
-		//Formulario de actualización de las mascotas
+		<!--Formulario de actualización de las mascotas-->
 
 		<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
@@ -166,8 +168,10 @@
 							required>
 						<br>
 						<br>
-						<label for "image_upgrade"> Imagen de la mascota</label><br>
-						<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
+						<section name="section_upgrade" id="section_upgrade">
+							<label for "image_upgrade"> Imagen de la mascota</label><br>
+							<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
+						</section>
 						<br>
 						<br>
 						</input>
@@ -179,7 +183,7 @@
 			</div>
 		</div>
 
-		//Filtrado y busqueda de mascotas
+		<!--Filtrado y busqueda de mascotas-->
 
 		<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 			<h3 class="titles">Busqueda de mascotas</h3>
@@ -203,10 +207,38 @@
 				<select name=race id="race" required>
 					<option value=0>Elija primero el tamaño</option>
 				</select>
+
+				<label for "neighborhood">Seleccione la localidad:</label><br>
+				<select id="neighborhood" name="neighborhood" required>
+					<option value="" selected="selected">Seleccione :</option>
+					<option value="2">Usaquen</option>
+					<option value="3">Chapinero</option>
+					<option value="4">Santa Fe</option>
+					<option value="5">San Cristobal</option>
+					<option value="6">Usme</option>
+					<option value="7">Tunjuelito</option>
+					<option value="8">Bosa</option>
+					<option value="9">Kennedy</option>
+					<option value="10">Fontibon</option>
+					<option value="11">Engativa</option>
+					<option value="12">Suba</option>
+					<option value="13">Barrios Unidos</option>
+					<option value="14">Teusaquillo</option>
+					<option value="15">Los Martires</option>
+					<option value="16">Antonio Nariño</option>
+					<option value="17">Puente Aranda</option>
+					<option value="18">La Candelaria</option>
+					<option value="19">Uribe</option>
+					<option value="20">Ciudad Bolivar</option>
+					<option value="21">Sumapaz</option>
+					<option value="22">Municipios aledaños</option>
+				</select>
+				<br>
+
 			</form>
-			
-			//Uso de las tablas y asignación de indices
-			
+
+			<!--Uso de las tablas y asignación de indices-->
+
 			<nav>
 				<ul class="pagination justify-content-center">
 					<li id="previousTen" class="page-item">

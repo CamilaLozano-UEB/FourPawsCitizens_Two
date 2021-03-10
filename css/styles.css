@@ -1,3 +1,17 @@
 .titles{
 	text-align: center;
 }
+
+*section_creation{
+	text-align: center;
+	width:300;
+	height: 300;
+	border: 5px solid black;
+	
+}
+*section_upgrade{
+	text-align: center;
+	width:300;
+	height: 300;
+	border: 5px solid black;
+}
