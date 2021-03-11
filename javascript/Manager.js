@@ -1,6 +1,7 @@
 class Manager {
-	constructor(data) {
+	static constructor(data) {
 		this.pets = data;
+		console.log(data);
 	}
 
 	static getformCreate(data) {

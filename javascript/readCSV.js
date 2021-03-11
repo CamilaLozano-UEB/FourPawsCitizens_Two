@@ -1,11 +1,12 @@
 
 // Lectura y carga del csv
 
-import { Manager } from "./pets.js";
+import { Manager } from "./Manager.js";
 import { assignTableNavigationValues } from "./TableNavigation.js";
 
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
+	/*var manager = new Manager(data);*/
 	assignTableNavigationValues(Manager.createSubLists(data));
 });
 
