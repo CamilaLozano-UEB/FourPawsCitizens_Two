@@ -6,8 +6,8 @@ import { assignTableNavigationValues } from "./TableNavigation.js";
 
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
-	/*var manager = new Manager(data);*/
-	assignTableNavigationValues(Manager.createSubLists(data));
+	const manager = new Manager(data);
+	assignTableNavigationValues(manager.createSubLists(data));
 });
 
 function resolveCharsetErrors(data) {

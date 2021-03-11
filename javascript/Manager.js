@@ -1,10 +1,9 @@
 class Manager {
-	static constructor(data) {
+	constructor(data) {
 		this.pets = data;
-		console.log(data);
 	}
 
-	static getformCreate(data) {
+	getformCreate(data) {
 		var microchip = document.getElementById("microchip").value;
 		var species = document.getElementById("species").value;
 		var sex = document.getElementById("sex").value;
@@ -17,7 +16,7 @@ class Manager {
 
 		data.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
 	}
-	static getformUp(data) {
+	getformUp(data) {
 		//	var image= document.getElementById("image").value;
 		var microchip = document.getElementById("microchip").value;
 		var race = document.getElementById("race").value;
@@ -34,7 +33,7 @@ class Manager {
 		return data;
 	}
 
-	static createSubLists(data) {
+	createSubLists(data) {
 		var num = parseInt(data.length / 50) + 1;
 		var bidSublist = [];
 		for (var i = 0; i < num; i++) {
@@ -50,7 +49,7 @@ class Manager {
 	}
 
 	fiterFromMultipleFields(species, size, race, neighborhood) {
-		
+
 	}
 
 	get data() {
