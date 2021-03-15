@@ -48,15 +48,41 @@ class Manager {
 		return bidSublist
 	}
 
-	fiterFromMultipleFields(species, size, race, neighborhood) {
-
+	fiterFromMultipleFields() {
+		var specie = document.formT.species[document.formT.species.selectedIndex].text.toUpperCase();
+		var size = document.formT.size[document.formT.size.selectedIndex].text.toUpperCase();
+		var race = document.formT.race[document.formT.race.selectedIndex].text.toUpperCase();
+		var neighborhood = document.formT.neighborhood[document.formT.race.selectedIndex].text.toUpperCase();
+		var data = [];
+		for (var i = 0; i < this.pets.length; i++) {
+			if (size === "SELECCIONE" && neighborhood === "SELECCIONE") {
+				if (specie === this.pets[i]["species"]) {
+					data.push(this.pets[i]);
+				}
+			} else if (race === "SELECCIONE" && neighborhood === "SELECCIONE") {
+				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"]) {
+					data.push(this.pets[i]);
+				}
+			} else if (neighborhood === "SELECCIONE") {
+				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && race === this.pets[i]["race"]) {
+					data.push(this.pets[i]);
+				}
+			} else if (size === "SELECCIONE") {
+				if (specie === this.pets[i]["species"]) {
+					data.push(this.pets[i]);
+				}
+			} else if (race === "SELECCIONE") {
+				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"]) {
+					data.push(this.pets[i]);
+				}
+			} else if (neighborhood !== "SELECCIONE") {
+				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && race === this.pets[i]["race"] && neighborhood === this.pets[i]["neighborhood"]) {
+					data.push(this.pets[i]);
+				}
+			}
+		}
+		return this.createSubLists(data);
 	}
-
-	get data() {
-		return data;
-	}
-
-
 
 }
 export { Manager };
