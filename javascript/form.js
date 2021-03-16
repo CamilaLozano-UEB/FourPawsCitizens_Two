@@ -66,12 +66,12 @@ function changeSize() {
 	} else {
 		document.formT.size.length = 1
 		document.formT.size.options[0].value = 0
-		document.formT.size.options[0].text = "-"
+		document.formT.size.options[0].text = "Seleccione"
 	}
 	document.formT.size.options[0].selected = true
 	document.formT.race.length = 1
 	document.formT.race.options[0].value = 0
-	document.formT.race.options[0].text = "Elija primero el tamaño"
+	document.formT.race.options[0].text = "Seleccione"
 }
 function changeRace() {
 	selectsize = document.formT.species[document.formT.species.selectedIndex].value
@@ -102,7 +102,7 @@ function changeRaceDog() {
 	} else {
 		document.formT.race.length = 1
 		document.formT.race.options[0].value = 0
-		document.formT.race.options[0].text = "-"
+		document.formT.race.options[0].text = "Seleccione"
 	}
 	document.formT.race.options[0].selected = true
 }
@@ -120,7 +120,7 @@ function changeRaceCat() {
 	} else {
 		document.formT.race.length = 1
 		document.formT.race.options[0].value = 0
-		document.formT.race.options[0].text = "-"
+		document.formT.race.options[0].text = "Seleccione"
 	}
 	document.formT.race.options[0].selected = true
 }
@@ -154,12 +154,12 @@ function changeSize() {
 	} else {
 		document.formT.size.length = 1
 		document.formT.size.options[0].value = 0
-		document.formT.size.options[0].text = "-"
+		document.formT.size.options[0].text = "Seleccione"
 	}
 	document.formT.size.options[0].selected = true
 	document.formT.race.length = 1
 	document.formT.race.options[0].value = 0
-	document.formT.race.options[0].text = "Elija primero el tamaño"
+	document.formT.race.options[0].text = "Seleccione"
 }
 function changeRaceC() {
 	selectsize = document.formC.species[document.formC.species.selectedIndex].value
@@ -190,7 +190,7 @@ function changeRaceDogC() {
 	} else {
 		document.formC.race.length = 1
 		document.formC.race.options[0].value = 0
-		document.formC.race.options[0].text = "-"
+		document.formC.race.options[0].text = "Seleccione"
 	}
 	document.formC.race.options[0].selected = true
 }
@@ -208,7 +208,7 @@ function changeRaceCatC() {
 	} else {
 		document.formC.race.length = 1
 		document.formC.race.options[0].value = 0
-		document.formC.race.options[0].text = "-"
+		document.formC.race.options[0].text = "Seleccione"
 	}
 	document.formC.race.options[0].selected = true
 } 
@@ -242,35 +242,14 @@ function changeSizeC() {
 	} else {
 		document.formC.size.length = 1
 		document.formC.size.options[0].value = 0
-		document.formC.size.options[0].text = "-"
+		document.formC.size.options[0].text = "Seleccione"
 	}
 	document.formC.size.options[0].selected = true
 	document.formC.race.length = 1
 	document.formC.race.options[0].value = 0
-	document.formC.race.options[0].text = "Elija primero el tamaño"
-}
-getformCreate = function() {
-	var microchip = document.getElementById("microchip").value;
-	var species = document.getElementById("species").value;
-	var sex = document.getElementById("sex").value;
-	var size = document.getElementById("size").value;
-	var danger = document.getElementById("danger").value;
-	var neighborhood = document.getElementById("neighborhood").value;
-	var race = document.getElementById("race").value;
-	var owner = document.getElementById("owner").value;
-	var address = document.getElementById("address").value;
-
-	//var csv1 = microchip + ";" + species + ";" + sex + ";" + size + ";" + danger + ";"+neighborhood+";" +race+";" + owner + ";"+address;
+	document.formC.race.options[0].text = "Seleccione"
 }
 
-getformUp = function() {
-	//	var image= document.getElementById("image").value;
-	var race = document.getElementById("race").value;
-	var owner = document.getElementById("owner").value;
-	var address = document.getElementById("address").value;
-
-	//var csv2 = race +";"+owner+";"+ addres;//image;
-}
 
 
 
