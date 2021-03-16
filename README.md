@@ -11,11 +11,9 @@
 
 2. Link del repositorio de github:
 	-
-
-  - "Aqui va el link"
+        - "Aqui va el link"
 3. Intrucciones de uso:
 	-
-
 	1. Ejecute la pagina web en un servidor, esta cargara automaticamente el .cvs
 	2. Podra navegar por tres pestañas: Registrar mascota, tabla de mascotas y actualizar mascotas.
 	3. Para registrar una mascota, dirijase a la pestaña y dele click, llene todos los campos solicitados (son obligatorios) y registre la mascota, esta se guardara al final de la tabla.
@@ -25,7 +23,6 @@
 
 4. Lenguaje de Codificación
 	-
-
 	- UTF-8	
 
 5. Entorno de Desarrollo
@@ -33,7 +30,6 @@
 	-IDE Eclipse Web Development 2020-12	
   
 6. Frameworks y librerias
-  -
   - Bootstrap
   - Ajax
   - d3j 
