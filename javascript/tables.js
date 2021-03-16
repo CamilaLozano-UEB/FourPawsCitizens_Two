@@ -37,6 +37,7 @@ function createBody(petsSubList, indice) {
 	}
 	document.getElementById("tablePets").appendChild(tBody);
 }
+
 function addButtonEventListener(button) {
 	button.addEventListener("click", function() {
 		if (button.className.split(" ").length > 1) {

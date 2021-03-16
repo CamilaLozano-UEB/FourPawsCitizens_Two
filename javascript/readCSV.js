@@ -8,15 +8,7 @@ d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
 	const manager = new Manager(data);
 	assignTableNavigationValues(manager.createSubLists(data));
-	document.getElementById("filtro").addEventListener("click", function() {
-		assignTableNavigationValues(manager.fiterFromMultipleFields());
-	});
-	document.getElementById("Cpets").addEventListener("click", function() {
-		assignTableNavigationValues(manager.getformCreate());
-	});
-	document.getElementById("Upets").addEventListener("click", function() {
-		assignTableNavigationValues(manager.getformUp()); 
-	});
+	coordinateActions(manager);
 });
 
 function resolveCharsetErrors(data) {
@@ -29,4 +21,17 @@ function resolveCharsetErrors(data) {
 		}
 	}
 }
+function coordinateActions(manager) {
+	document.getElementById("filter").addEventListener("click", function() {
+		assignTableNavigationValues(manager.fiterFromMultipleFields());
+	});
+	document.getElementById("Cpets").addEventListener("click", function() {
+		assignTableNavigationValues(manager.getformCreate());
+	});
+	document.getElementById("Upets").addEventListener("click", function() {
+		assignTableNavigationValues(manager.getformUp());
+	});
+}
+
+
 /*Promesa fetch api jalar recursos dek server, then funcion que se ejecuta si la función está correcta*/
