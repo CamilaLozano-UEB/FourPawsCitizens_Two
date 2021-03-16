@@ -55,7 +55,7 @@ class Manager {
 		var race = document.formT.race[document.formT.race.selectedIndex].text.toUpperCase();
 		var neighborhood = document.formT.neighborhood[document.formT.neighborhood.selectedIndex].text.toUpperCase();
 		var data = [];
-		
+
 		for (var i = 0; i < this.pets.length; i++) {
 			if (size === "SELECCIONE" && neighborhood === "SELECCIONE") {
 				if (specie === this.pets[i]["species"]) {
@@ -69,6 +69,10 @@ class Manager {
 				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && race === this.pets[i]["race"]) {
 					data.push(this.pets[i]);
 				}
+			} else if (neighborhood !== "SELECCIONE" && race === "SELECCIONE" && size === "SELECCIONE" && specie === "SELECCIONE") {
+				if (neighborhood === this.pets[i]["neighborhood"]) {
+					data.push(this.pets[i]);
+				}
 			} else if (size === "SELECCIONE") {
 				if (specie === this.pets[i]["species"] && neighborhood === this.pets[i]["neighborhood"]) {
 					data.push(this.pets[i]);
@@ -77,7 +81,7 @@ class Manager {
 				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && neighborhood === this.pets[i]["neighborhood"]) {
 					data.push(this.pets[i]);
 				}
-			} else if (neighborhood !== "SELECCIONE") {
+			} else if (neighborhood !== "SELECCIONE" && race !== "SELECCIONE") {
 				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && race === this.pets[i]["race"] && neighborhood === this.pets[i]["neighborhood"]) {
 					data.push(this.pets[i]);
 				}
@@ -88,6 +92,5 @@ class Manager {
 		}
 		return this.createSubLists(data);
 	}
-
 }
 export { Manager };

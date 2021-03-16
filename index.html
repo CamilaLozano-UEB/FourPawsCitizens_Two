@@ -18,15 +18,15 @@
 <nav>
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
 		<li class="nav-item">
-			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-				aria-selected="true">Registrar Mascota</a>
+			<a class="nav-link active" id="register-tab" data-toggle="tab" href="#register" role="tab"
+				aria-controls="register" aria-selected="true">Registrar Mascota</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+			<a class="nav-link" id="update-tab" data-toggle="tab" href="#update" role="tab" aria-controls="update"
 				aria-selected="false">Actualizar Mascota</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+			<a class="nav-link" id="find-tab" data-toggle="tab" href="#find" role="tab" aria-controls="find"
 				aria-selected="false">Tabla de Mascotas</a>
 		</li>
 	</ul>
@@ -35,12 +35,11 @@
 <body>
 	<script type="module" src="javascript/readCSV.js"></script>
 	<div class="tab-content" id="myTabContent">
-		<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+		<div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
 
 				<!--Formulario de registro de nuevas mascotas-->
-
 				<form action="Createpatsform" method="post" autocomplete="off" id="formC" name="formC">
 					<fieldset>
 						<legend> Formulario de Registro de mascotas </legend>
@@ -145,12 +144,14 @@
 
 		<!--Formulario de actualización de las mascotas-->
 
-		<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+		<div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
 				<form action="Createpatsform" method="post" autocomplete="off">
 					<fieldset>
 						<legend> Formulario de Actualización de mascotas </legend>
+						<label for "microchip">Microchip:</label><br>
+						<input id="microchipField" type="text" name="microchip" disabled><br>
 						<label for "race">Digite la raza:</label><br>
 						<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
 						<br>
@@ -166,11 +167,11 @@
 						<br>
 						<br>
 						<label for "image_upgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
-					<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
-					</div>
+						<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
+						</div>
 						<br>
 						<br>
-						</input> 
+						</input>
 						<p align="center">
 							<button type="button" id="Upets">Actualizar mascota</button>
 						</p>
@@ -181,7 +182,7 @@
 
 		<!--Filtrado y busqueda de mascotas-->
 
-		<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+		<div class="tab-pane fade" id="find" role="tabpanel" aria-labelledby="find-tab">
 			<h3 class="titles">Busqueda de mascotas</h3>
 			<h5>Filtrar</h5>
 			<form name="formT" id=="formT">
@@ -227,7 +228,7 @@
 					<option value="21">Sumapaz</option>
 					<option value="22">Municipios aledaños</option>
 				</select>
-				<button id="filtro" type="button">Filtrar</button>
+				<button class="btn btn-rounded btn-primary" id="filtro" type="button">Filtrar</button>
 
 			</form>
 			<br>
