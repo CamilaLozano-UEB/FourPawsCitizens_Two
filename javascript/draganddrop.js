@@ -1,22 +1,10 @@
-var file = "";
-function dropHandler(ev) {
+function allowDrop(ev) { ev.preventDefault(); }
+function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+function drop(ev) {
 	ev.preventDefault();
-	if (ev.dataTransfer.items) {
-		for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-			if (ev.dataTransfer.items[i].kind === 'file') {
-				file = ev.dataTransfer.items[i].getAsFile();
-			}
-		}
-	} else {
-		for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-		}
-	}
-	removeDragData(ev)
-}
-function removeDragData(ev) {
-	if (ev.dataTransfer.items) {
-		ev.dataTransfer.items.clear();
-	} else {
-		ev.dataTransfer.clearData();
-	}
+	var data = ev.dataTransfer.getData("text");
+	var element = document.createElement("p");
+	element.textContent = data;
+	ev.target.appendChild(element);
+	element.style.color = "blue";
 }
