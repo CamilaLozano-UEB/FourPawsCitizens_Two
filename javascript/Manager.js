@@ -18,7 +18,7 @@ class Manager {
 		return this.createSubLists(this.pets);
 	}
 	getformUp() {
-		//	var image= document.getElementById("image").value;
+		var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
 		var microchip = document.formU.microchip.value;
 		var race = document.getElementById("raceU").value.toUpperCase();
 		var owner = document.getElementById("ownerU").value.toUpperCase();
@@ -28,7 +28,7 @@ class Manager {
 				this.pets[i]["race"] = race;
 				this.pets[i]["owner"] = owner;
 				this.pets[i]["address"] = address;
-				//data[i]["image"] = image;
+				this.pets[i]["image"] = image.src;
 			}
 		}
 		return this.createSubLists(this.pets);

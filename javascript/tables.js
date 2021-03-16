@@ -29,7 +29,11 @@ function createBody(petsSubList, indice) {
 			if (property === "microchip") {
 				td.className = (indice * 50) + i;
 			} else if (property === "image") {
-				console.log("2")
+				var image = document.createElement("img");
+				image.src = td.textContent;
+				image.width = document.body.clientWidth / 6;
+				td.textContent = "";
+				td.appendChild(image);
 			}
 			tr.appendChild(td);
 		}
