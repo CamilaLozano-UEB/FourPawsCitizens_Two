@@ -27,9 +27,14 @@ function coordinateActions(manager) {
 	});
 	document.getElementById("Cpets").addEventListener("click", function() {
 		assignTableNavigationValues(manager.getformCreate());
+		document.getElementById("formC").reset();
+		document.getElementById("imagecreation").removeChild(document.getElementById("imagecreation").getElementsByClassName("image")[0]);
+
 	});
 	document.getElementById("Upets").addEventListener("click", function() {
 		assignTableNavigationValues(manager.getformUp());
+		document.getElementById("formU").reset();
+		document.getElementById("imageupgrade").removeChild(document.getElementById("imageupgrade").getElementsByClassName("image")[0]);
 	});
 }
 

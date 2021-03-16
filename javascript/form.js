@@ -254,8 +254,3 @@ function changeSizeC() {
 	document.formC.race.length = 1
 	document.formC.race.options[0].text = "Seleccione"
 }
-
-
-
-
-
