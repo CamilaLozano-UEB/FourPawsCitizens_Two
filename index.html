@@ -10,10 +10,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v6.min.js"></script>
 	<script src="javascript/form.js"></script>
-	<script src="draganddrop.js"></script>
-
 
 </head>
+
+<!--Manejo de pestañas en la página principa en html-->
 
 <nav>
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -38,6 +38,9 @@
 		<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
+
+				<!--Formulario de registro de nuevas mascotas-->
+
 				<form action="Createpatsform" method="post" autocomplete="off" id="formC" name="formC">
 					<fieldset>
 						<legend> Formulario de Registro de mascotas </legend>
@@ -139,100 +142,134 @@
 				</form>
 			</div>
 		</div>
-	</div>
 
-	<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-		<h2 class="titles">Four Pets Citizens</h2>
-		<div align="center">
-			<form action="Createpatsform" method="post" autocomplete="off">
-				<fieldset>
-					<legend> Formulario de Actualización de mascotas </legend>
-					<label for "race">Digite la raza:</label><br>
-					<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
-					<br>
-					<br>
+		<!--Formulario de actualización de las mascotas-->
 
-					<label for "owner">Digite el nombre del dueño:</label><br>
-					<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
-					<br>
-					<br>
-					<label for "address">Digite la dirección:</label><br>
-					<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11" required>
-					<br>
-					<br>
-					<label for "image_upgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
+		<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+			<h2 class="titles">Four Pets Citizens</h2>
+			<div align="center">
+				<form action="Createpatsform" method="post" autocomplete="off">
+					<fieldset>
+						<legend> Formulario de Actualización de mascotas </legend>
+						<label for "race">Digite la raza:</label><br>
+						<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
+						<br>
+						<br>
+
+						<label for "owner">Digite el nombre del dueño:</label><br>
+						<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
+						<br>
+						<br>
+						<label for "address">Digite la dirección:</label><br>
+						<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11"
+							required>
+						<br>
+						<br>
+						<label for "image_upgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
 					<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
 					</div>
-					<br>
-					<br>
-					<p align="center">
-						<button type="button" onclick="getformUp()">Actualizar mascota</button>
-					</p>
-				</fieldset>
-			</form>
+						<br>
+						<br>
+						</input>
+						<p align="center">
+							<button type="button" onclick="getformUp()">Actualizar mascota</button>
+						</p>
+					</fieldset>
+				</form>
+			</div>
 		</div>
-	</div>
 
-	<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-		<h3 class="titles">Busqueda de mascotas</h3>
-		<h5>Filtrar</h5>
-		<form name="formT" id=="formT">
-			<label for="species">Seleccione la especie:</label><br>
-			<select name="species" id="species" onchange="changeSize()" required>
-				<option value="" selected="selected">Seleccione :</option>
-				<option value="2">Canino</option>
-				<option value="3">Felino</option>
-				<option value="4">No identificado</option>
-			</select>
+		<!--Filtrado y busqueda de mascotas-->
+
+		<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			<h3 class="titles">Busqueda de mascotas</h3>
+			<h5>Filtrar</h5>
+			<form name="formT" id=="formT">
+				<label for="species">Seleccione la especie:</label>
+				<select name="species" id="species" onchange="changeSize()" required>
+					<option value="" selected="selected">Seleccione</option>
+					<option value="2">Canino</option>
+					<option value="3">Felino</option>
+					<option value="4">No identificado</option>
+				</select>
+
+				<label for "size">Seleccione el tamaño:</label>
+				<select name="size" id="size" onchange="changeRace()" required>
+					<option value=0>Seleccione</option>
+				</select>
+				<label for "size">Seleccione la raza:</label>
+				<select name=race id="race" required>
+					<option value=0>Seleccione</option>
+				</select>
+
+				<label for "neighborhood">Seleccione la localidad:</label>
+				<select id="neighborhood" name="neighborhood" required>
+					<option selected="selected">Seleccione</option>
+					<option value="2">Usaquen</option>
+					<option value="3">Chapinero</option>
+					<option value="4">Santa Fe</option>
+					<option value="5">San Cristobal</option>
+					<option value="6">Usme</option>
+					<option value="7">Tunjuelito</option>
+					<option value="8">Bosa</option>
+					<option value="9">Kennedy</option>
+					<option value="10">Fontibon</option>
+					<option value="11">Engativa</option>
+					<option value="12">Suba</option>
+					<option value="13">Barrios Unidos</option>
+					<option value="14">Teusaquillo</option>
+					<option value="15">Los Martires</option>
+					<option value="16">Antonio Nariño</option>
+					<option value="17">Puente Aranda</option>
+					<option value="18">La Candelaria</option>
+					<option value="19">Uribe</option>
+					<option value="20">Ciudad Bolivar</option>
+					<option value="21">Sumapaz</option>
+					<option value="22">Municipios aledaños</option>
+				</select>
+				<button id="filtro" type="button">Filtrar</button>
+
+			</form>
 			<br>
+			<!--Uso de las tablas y asignación de indices-->
 
-			<label for "size">Seleccione el tamaño:</label><br>
-			<select name="size" id="size" onchange="changeRace()" required>
-				<option value=0>Elija primero la especie</option>
-			</select>
-			<br>
-			<label for "size">Seleccione la raza:</label><br>
-			<select name=race id="race" required>
-				<option value=0>Elija primero el tamaño</option>
-			</select>
-		</form>
-		<nav>
-			<ul class="pagination justify-content-center">
-				<li id="previousTen" class="page-item">
-					<a class="page-link" href="#">&laquo;10&laquo;</a>
-				</li>
-				<li id="previous" class="page-item">
-					<a class="page-link" href="#">&laquo;</a>
-				</li>
-				<li id="page" class="page-item disabled"><a class="page-link" href="#">1</a></li>
-				<li id="next" class="page-item">
-					<a class="page-link" href="#">&raquo;</a>
-				</li>
-				<li id="next10" class="page-item">
-					<a class="page-link" href="#">&raquo;10&raquo;</a>
-				</li>
-				<li id="total" class="page-item disabled"><a class="page-link">1</a></li>
-			</ul>
-		</nav>
+			<nav>
+				<ul class="pagination justify-content-center">
+					<li id="previousTen" class="page-item">
+						<a class="page-link" href="#">&laquo;10&laquo;</a>
+					</li>
+					<li id="previous" class="page-item">
+						<a class="page-link" href="#">&laquo;</a>
+					</li>
+					<li id="page" class="page-item disabled"><a class="page-link" href="#">1</a></li>
+					<li id="next" class="page-item">
+						<a class="page-link" href="#">&raquo;</a>
+					</li>
+					<li id="next10" class="page-item">
+						<a class="page-link" href="#">&raquo;10&raquo;</a>
+					</li>
+					<li id="total" class="page-item disabled"><a class="page-link">1</a></li>
+				</ul>
+			</nav>
 
-		<table id="tablePets" class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">microchip</th>
-					<th scope="col">specie</th>
-					<th scope="col">sex</th>
-					<th scope="col">size</th>
-					<th scope="col">potentDangerous</th>
-					<th scope="col">neighborhood</th>
-					<th scope="col">race</th>
-					<th scope="col">owner</th>
-					<th scope="col">address</th>
-					<th scope="col">picture</th>
-				</tr>
-			</thead>
-		</table>
-	</div>
+			<table id="tablePets" class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">microchip</th>
+						<th scope="col">specie</th>
+						<th scope="col">sex</th>
+						<th scope="col">size</th>
+						<th scope="col">potentDangerous</th>
+						<th scope="col">neighborhood</th>
+						<th scope="col">race</th>
+						<th scope="col">owner</th>
+						<th scope="col">address</th>
+						<th scope="col">picture</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
 	</div>
 </body>
 

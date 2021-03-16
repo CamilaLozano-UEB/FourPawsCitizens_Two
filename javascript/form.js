@@ -1,3 +1,6 @@
+
+//Filtrado por especies y tamaño
+
 var dog = new Array("Seleccione", "Muy Grande", "Grande", "Mediano", "Pequeño", "Miniatura");
 var cat = new Array("Seleccione", "Grande", "Mediano", "Pequeño", "Miniatura");
 var mistery = new Array("Seleccione", "No Identificado");

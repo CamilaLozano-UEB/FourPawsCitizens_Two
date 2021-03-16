@@ -1,3 +1,6 @@
+
+//Creación de las tablas
+
 function createBody(petsSubList, indice) {
 	if (document.getElementById("tBody") !== null) {
 		document.getElementById("tablePets").removeChild(document.getElementById("tBody"));
@@ -19,5 +22,9 @@ function createBody(petsSubList, indice) {
 	}
 	document.getElementById("tablePets").appendChild(tBody);
 }
+
+
+
+
 
 export { createBody };
