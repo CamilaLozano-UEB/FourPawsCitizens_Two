@@ -38,7 +38,7 @@
 		<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
-				<form action="Createpatsform" method="post" autocomplete="off" id="formC" name="formC" >
+				<form action="Createpatsform" method="post" autocomplete="off" id="formC" name="formC">
 					<fieldset>
 						<legend> Formulario de Registro de mascotas </legend>
 						<label for="microchip">Ingrese su microchip:</label><br>
@@ -111,9 +111,9 @@
 						<br>
 
 						<label for "size">Seleccione la raza:</label><br>
-				<select name=race id="race" required>
-					<option value=0>Elija primero el tamaño</option>
-				</select>
+						<select name=race id="race" required>
+							<option value=0>Elija primero el tamaño</option>
+						</select>
 						<br>
 						<br>
 
@@ -127,8 +127,9 @@
 						<br>
 						<br>
 						<label for "image_creation"> Imagen de la mascota</label><br>
-						<input type="file" id="image_creation" ondrop="dropHandler(event);">
-						</input>
+						<div id="image_creation" ondrop="drop(event)" ondragover="allowDrop(event)">
+						Arrastre la imagen
+						</div>
 						<br>
 						<br>
 						<p align="center">
@@ -138,99 +139,100 @@
 				</form>
 			</div>
 		</div>
-		<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-			<h2 class="titles">Four Pets Citizens</h2>
-			<div align="center">
-				<form action="Createpatsform" method="post" autocomplete="off">
-					<fieldset>
-						<legend> Formulario de Actualización de mascotas </legend>
-						<label for "race">Digite la raza:</label><br>
-						<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
-						<br>
-						<br>
+	</div>
 
-						<label for "owner">Digite el nombre del dueño:</label><br>
-						<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
-						<br>
-						<br>
-						<label for "address">Digite la dirección:</label><br>
-						<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11"
-							required>
-						<br>
-						<br>
-						<label for "image_upgrade"> Imagen de la mascota</label><br>
-						<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
-						<br>
-						<br>
-						</input>
-						<p align="center">
-							<button type="button" onclick="getformUp()">Actualizar mascota</button>
-						</p>
-					</fieldset>
-				</form>
-			</div>
-		</div>
+	<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+		<h2 class="titles">Four Pets Citizens</h2>
+		<div align="center">
+			<form action="Createpatsform" method="post" autocomplete="off">
+				<fieldset>
+					<legend> Formulario de Actualización de mascotas </legend>
+					<label for "race">Digite la raza:</label><br>
+					<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
+					<br>
+					<br>
 
-		<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-			<h3 class="titles">Busqueda de mascotas</h3>
-			<h5>Filtrar</h5>
-			<form name="formT" id=="formT">
-				<label for="species">Seleccione la especie:</label><br>
-				<select name="species" id="species" onchange="changeSize()" required>
-					<option value="" selected="selected">Seleccione :</option>
-					<option value="2">Canino</option>
-					<option value="3">Felino</option>
-					<option value="4">No identificado</option>
-				</select>
-				<br>
-
-				<label for "size">Seleccione el tamaño:</label><br>
-				<select name="size" id="size" onchange="changeRace()" required>
-					<option value=0>Elija primero la especie</option>
-				</select>
-				<br>
-				<label for "size">Seleccione la raza:</label><br>
-				<select name=race id="race" required>
-					<option value=0>Elija primero el tamaño</option>
-				</select>
+					<label for "owner">Digite el nombre del dueño:</label><br>
+					<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
+					<br>
+					<br>
+					<label for "address">Digite la dirección:</label><br>
+					<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11" required>
+					<br>
+					<br>
+					<label for "image_upgrade"> Imagen de la mascota</label><br>
+					<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
+					<br>
+					<br>
+					</input>
+					<p align="center">
+						<button type="button" onclick="getformUp()">Actualizar mascota</button>
+					</p>
+				</fieldset>
 			</form>
-			<nav>
-				<ul class="pagination justify-content-center">
-					<li id="previousTen" class="page-item">
-						<a class="page-link" href="#">&laquo;10&laquo;</a>
-					</li>
-					<li id="previous" class="page-item">
-						<a class="page-link" href="#">&laquo;</a>
-					</li>
-					<li id="page" class="page-item disabled"><a class="page-link" href="#">1</a></li>
-					<li id="next" class="page-item">
-						<a class="page-link" href="#">&raquo;</a>
-					</li>
-					<li id="next10" class="page-item">
-						<a class="page-link" href="#">&raquo;10&raquo;</a>
-					</li>
-					<li id="total" class="page-item disabled"><a class="page-link">1</a></li>
-				</ul>
-			</nav>
-
-			<table id="tablePets" class="table table-striped">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">microchip</th>
-						<th scope="col">specie</th>
-						<th scope="col">sex</th>
-						<th scope="col">size</th>
-						<th scope="col">potentDangerous</th>
-						<th scope="col">neighborhood</th>
-						<th scope="col">race</th>
-						<th scope="col">owner</th>
-						<th scope="col">address</th>
-						<th scope="col">picture</th>
-					</tr>
-				</thead>
-			</table>
 		</div>
+	</div>
+
+	<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+		<h3 class="titles">Busqueda de mascotas</h3>
+		<h5>Filtrar</h5>
+		<form name="formT" id=="formT">
+			<label for="species">Seleccione la especie:</label><br>
+			<select name="species" id="species" onchange="changeSize()" required>
+				<option value="" selected="selected">Seleccione :</option>
+				<option value="2">Canino</option>
+				<option value="3">Felino</option>
+				<option value="4">No identificado</option>
+			</select>
+			<br>
+
+			<label for "size">Seleccione el tamaño:</label><br>
+			<select name="size" id="size" onchange="changeRace()" required>
+				<option value=0>Elija primero la especie</option>
+			</select>
+			<br>
+			<label for "size">Seleccione la raza:</label><br>
+			<select name=race id="race" required>
+				<option value=0>Elija primero el tamaño</option>
+			</select>
+		</form>
+		<nav>
+			<ul class="pagination justify-content-center">
+				<li id="previousTen" class="page-item">
+					<a class="page-link" href="#">&laquo;10&laquo;</a>
+				</li>
+				<li id="previous" class="page-item">
+					<a class="page-link" href="#">&laquo;</a>
+				</li>
+				<li id="page" class="page-item disabled"><a class="page-link" href="#">1</a></li>
+				<li id="next" class="page-item">
+					<a class="page-link" href="#">&raquo;</a>
+				</li>
+				<li id="next10" class="page-item">
+					<a class="page-link" href="#">&raquo;10&raquo;</a>
+				</li>
+				<li id="total" class="page-item disabled"><a class="page-link">1</a></li>
+			</ul>
+		</nav>
+
+		<table id="tablePets" class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">microchip</th>
+					<th scope="col">specie</th>
+					<th scope="col">sex</th>
+					<th scope="col">size</th>
+					<th scope="col">potentDangerous</th>
+					<th scope="col">neighborhood</th>
+					<th scope="col">race</th>
+					<th scope="col">owner</th>
+					<th scope="col">address</th>
+					<th scope="col">picture</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
 	</div>
 </body>
 
