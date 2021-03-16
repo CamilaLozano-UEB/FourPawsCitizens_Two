@@ -9,6 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="javascript/form.js"></script>
 
 </head>
 
@@ -187,22 +188,24 @@
 			<h5>Filtrar</h5>
 			<form name="formT" id=="formT">
 				<label for="species">Seleccione la especie:</label>
-				<select name="species" id="species2" required>
+				<select name="species" id="species" onchange="changeSize()" required>
 					<option value="" selected="selected">Seleccione</option>
+					<option value="2">Canino</option>
+					<option value="3">Felino</option>
+					<option value="4">No identificado</option>
 				</select>
 
 				<label for "size">Seleccione el tamaño:</label>
-				<select name="size" id="size2" required>
+				<select name="size" id="size" onchange="changeRace()" required>
 					<option value=0>Seleccione</option>
 				</select>
 				<label for "size">Seleccione la raza:</label>
-				<div>
-				<select name=race id="race2" required>
+				<select name=race id="race" required>
 					<option value=0>Seleccione</option>
 				</select>
-				</div>
+
 				<label for "neighborhood">Seleccione la localidad:</label>
-				<select id="neighborhood2" name="neighborhood" required>
+				<select id="neighborhood" name="neighborhood" required>
 					<option selected="selected">Seleccione</option>
 					<option value="2">Usaquen</option>
 					<option value="3">Chapinero</option>
@@ -226,7 +229,7 @@
 					<option value="21">Sumapaz</option>
 					<option value="22">Municipios aledaños</option>
 				</select>
-				<button type="button" id="filtro">Filtrar</button>
+				<button id="filtro" type="button">Filtrar</button>
 
 			</form>
 			<br>

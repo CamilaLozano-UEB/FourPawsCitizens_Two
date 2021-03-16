@@ -3,14 +3,10 @@
 
 import { Manager } from "./Manager.js";
 import { assignTableNavigationValues } from "./TableNavigation.js";
-import * as Form2 from "./Form2.js";
-
 
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
 	const manager = new Manager(data);
-	Form2.setData(manager.pets);
-	Form2.addSpeciesEventListener();
 	assignTableNavigationValues(manager.createSubLists(data));
 	document.getElementById("filtro").addEventListener("click", function() {
 		assignTableNavigationValues(manager.fiterFromMultipleFields());
