@@ -55,6 +55,7 @@ class Manager {
 		var race = document.formT.race[document.formT.race.selectedIndex].text.toUpperCase();
 		var neighborhood = document.formT.neighborhood[document.formT.neighborhood.selectedIndex].text.toUpperCase();
 		var data = [];
+		
 		for (var i = 0; i < this.pets.length; i++) {
 			if (size === "SELECCIONE" && neighborhood === "SELECCIONE") {
 				if (specie === this.pets[i]["species"]) {
