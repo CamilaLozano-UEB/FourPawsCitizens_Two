@@ -11,8 +11,8 @@
 	<script src="https://d3js.org/d3.v6.min.js"></script>
 	<script src="javascript/draganddrop.js"></script>
 	<script src="javascript/form.js"></script>
-	<link rel ="stylesheet" href="css/styles.css" type="text/css">
-	
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+
 
 </head>
 
@@ -150,27 +150,27 @@
 		<div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
-				<form action="Createpatsform" method="post" autocomplete="off">
+				<form action="Uppetsform" method="post" autocomplete="off" name="formU" id=="formU">
 					<fieldset>
 						<legend> Formulario de Actualización de mascotas </legend>
 						<label for "microchip">Microchip:</label><br>
 						<input id="microchipField" type="text" name="microchip" disabled><br>
 						<label for "race">Digite la raza:</label><br>
-						<input type="text" name="race" size="30" id="race" placeholder="Ej: Pastor alemán" required>
+						<input type="text" name="race" size="30" id="raceU" placeholder="Ej: Pastor alemán" required>
 						<br>
 						<br>
 
 						<label for "owner">Digite el nombre del dueño:</label><br>
-						<input type="text" name="owner" size="30" id="owner" placeholder="Ej: Jhon Doe" required>
+						<input type="text" name="owner" size="30" id="ownerU" placeholder="Ej: Jhon Doe" required>
 						<br>
 						<br>
 						<label for "address">Digite la dirección:</label><br>
-						<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11"
+						<input type="text" name="address" size="30" id="addressU" placeholder="Ej: Cr 9 # 111 - 11"
 							required>
 						<br>
 						<br>
 						<label for "imageupgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
-						<div id="imageupgrade" ondrop="drop(event)" ondragover="allowDrop(event)" >
+						<div id="imageupgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
 						</div>
 						<br>
 						<br>
@@ -259,6 +259,7 @@
 			<table id="tablePets" class="table table-striped">
 				<thead>
 					<tr>
+						<th scope="col">acciones</th>
 						<th scope="col">#</th>
 						<th scope="col">microchip</th>
 						<th scope="col">specie</th>

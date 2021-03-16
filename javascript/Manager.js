@@ -4,27 +4,27 @@ class Manager {
 	}
 
 	getformCreate() {
-		var microchip = document.getElementById("microchip").text.toUpperCase();
-		var species = document.getElementById("species").text.toUpperCase();
-		var sex = document.getElementById("sex").text.toUpperCase();
-		var size = document.getElementById("size").text.toUpperCase();
-		var danger = document.getElementById("danger").text.toUpperCase();
-		var neighborhood = document.getElementById("neighborhood").text.toUpperCase();
-		var race = document.getElementById("race").text.toUpperCase();
-		var owner = document.getElementById("owner").text.toUpperCase();
-		var address = document.getElementById("address").text.toUpperCase();
+		var microchip = document.getElementById("microchip").value.toUpperCase();
+		var species = document.formC.species[document.formC.species.selectedIndex].text.toUpperCase();
+		var sex = document.formC.sex[document.formC.sex.selectedIndex].text.toUpperCase();
+		var size = document.formC.size[document.formC.size.selectedIndex].text.toUpperCase();
+		var danger = document.formC.danger[document.formC.danger.selectedIndex].text.toUpperCase();
+		var neighborhood = document.formC.neighborhood[document.formC.neighborhood.selectedIndex].text.toUpperCase();
+		var race = document.formC.race[document.formC.race.selectedIndex].text.toUpperCase();
+		var owner = document.getElementById("owner").value.toUpperCase();
+		var address = document.getElementById("address").value.toUpperCase();
 
 		this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
 		return this.createSubLists(this.pets);
 	}
 	getformUp() {
 		//	var image= document.getElementById("image").value;
-		var microchip = document.getElementById("microchip").text.toUpperCase();
-		var race = document.getElementById("race").text.toUpperCase();
-		var owner = document.getElementById("owner").text.toUpperCase();
-		var address = document.getElementById("address").text.toUpperCase();
+		var microchip = document.formU.microchip.value;
+		var race = document.getElementById("raceU").value.toUpperCase();
+		var owner = document.getElementById("ownerU").value.toUpperCase();
+		var address = document.getElementById("addressU").value.toUpperCase();
 		for (var i = 0; i < this.pets.length; i++) {
-			if (this.pets[i]["microchip"] == "microchip") {
+			if (this.pets[i]["microchip"] === microchip) {
 				this.pets[i]["race"] = race;
 				this.pets[i]["owner"] = owner;
 				this.pets[i]["address"] = address;
