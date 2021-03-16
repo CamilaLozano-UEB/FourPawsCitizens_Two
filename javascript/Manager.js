@@ -53,8 +53,9 @@ class Manager {
 		var specie = document.formT.species[document.formT.species.selectedIndex].text.toUpperCase();
 		var size = document.formT.size[document.formT.size.selectedIndex].text.toUpperCase();
 		var race = document.formT.race[document.formT.race.selectedIndex].text.toUpperCase();
-		var neighborhood = document.formT.neighborhood[document.formT.race.selectedIndex].text.toUpperCase();
+		var neighborhood = document.formT.neighborhood[document.formT.neighborhood.selectedIndex].text.toUpperCase();
 		var data = [];
+		
 		for (var i = 0; i < this.pets.length; i++) {
 			if (size === "SELECCIONE" && neighborhood === "SELECCIONE") {
 				if (specie === this.pets[i]["species"]) {
@@ -64,16 +65,16 @@ class Manager {
 				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"]) {
 					data.push(this.pets[i]);
 				}
-			} else if (neighborhood === "SELECCIONE") {
+			} else if (race !== "SELECCIONE" && neighborhood === "SELECCIONE") {
 				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && race === this.pets[i]["race"]) {
 					data.push(this.pets[i]);
 				}
 			} else if (size === "SELECCIONE") {
-				if (specie === this.pets[i]["species"]) {
+				if (specie === this.pets[i]["species"] && neighborhood === this.pets[i]["neighborhood"]) {
 					data.push(this.pets[i]);
 				}
 			} else if (race === "SELECCIONE") {
-				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"]) {
+				if (specie === this.pets[i]["species"] && size === this.pets[i]["size"] && neighborhood === this.pets[i]["neighborhood"]) {
 					data.push(this.pets[i]);
 				}
 			} else if (neighborhood !== "SELECCIONE") {
@@ -81,6 +82,9 @@ class Manager {
 					data.push(this.pets[i]);
 				}
 			}
+		}
+		if (data[0] === undefined) {
+			data.push({ "microchip": "", "species": "", "sex": "", "size": "", "potentDangerous": "", "neighborhood": "", "race": "", "owner": "", "address": "" })
 		}
 		return this.createSubLists(data);
 	}
