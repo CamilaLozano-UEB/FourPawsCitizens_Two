@@ -129,11 +129,10 @@
 							required>
 						<br>
 						<br>
-						<section id="section_creation" name="section_creation">
-							<label for "image_creation"> Imagen de la mascota</label><br>
-							<input type="file" id="image_creation" ondrop="dropHandler(event);">
-							</input>
-						</section>
+						<label for "image_creation"> Imagen de la mascota - Arrastre la imagen
+						</label><br>
+						<div id="image_creation" ondrop="drop(event)" ondragover="allowDrop(event)">
+						</div>
 						<br>
 						<br>
 						<p align="center">
@@ -166,10 +165,9 @@
 							required>
 						<br>
 						<br>
-						<section name="section_upgrade" id="section_upgrade">
-							<label for "image_upgrade"> Imagen de la mascota</label><br>
-							<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
-						</section>
+						<label for "image_upgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
+					<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
+					</div>
 						<br>
 						<br>
 						</input>

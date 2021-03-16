@@ -2,16 +2,20 @@
 	text-align: center;
 }
 
-*section_creation{
-	text-align: center;
-	width:300;
-	height: 300;
-	border: 5px solid black;
+image_creation {
+			width: 350px;
+			height: 70px;
+			padding: 30px;
+			border-top-width: 2px solid rgb(0, 0, 0) ;
+			border-bottom-width: 2px solid  rgb(0, 0, 0);
+			border-left-width: 2px solid  rgb(0, 0, 0);
+			border-right-width: 2px 2px solid  rgb(0, 0, 0);
+		}
+		
+image_upgrade{
+	width: 350px;
+			height: 70px;
+			padding: 30px;
+			border: 20px solid rgb(0, 0, 0);
 	
-}
-*section_upgrade{
-	text-align: center;
-	width:300;
-	height: 300;
-	border: 5px solid black;
 }
