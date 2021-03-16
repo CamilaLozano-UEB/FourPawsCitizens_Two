@@ -2,7 +2,7 @@
 	text-align: center;
 }
 
-image_creation {
+*image_creation {
 			width: 350px;
 			height: 70px;
 			padding: 30px;
@@ -12,7 +12,7 @@ image_creation {
 			border-right-width: 2px 2px solid  rgb(0, 0, 0);
 		}
 		
-image_upgrade{
+*image_upgrade{
 	width: 350px;
 			height: 70px;
 			padding: 30px;
