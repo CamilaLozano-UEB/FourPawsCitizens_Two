@@ -18,7 +18,7 @@ class Manager {
 		return this.createSubLists(data);
 	}
 	getformUp(data) {
-		//	var image= document.getElementById("image").value;
+		//	var image= document.getElementById("image").value; 
 		var microchip = document.getElementById("microchip").value;
 		var race = document.getElementById("race").value;
 		var owner = document.getElementById("owner").value;

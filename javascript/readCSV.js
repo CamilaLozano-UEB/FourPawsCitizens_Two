@@ -15,7 +15,7 @@ d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 		assignTableNavigationValues(manager.getformCreate());
 	});
 	document.getElementById("Upets").addEventListener("click", function() {
-		assignTableNavigationValues(manager.getformUp());
+		assignTableNavigationValues(manager.getformUp()); 
 	});
 });
 
