@@ -3,7 +3,7 @@ class Manager {
 		this.pets = data;
 	}
 
-	getformCreate(data) {
+	getformCreate() {
 		var microchip = document.getElementById("microchip").value;
 		var species = document.getElementById("species").value;
 		var sex = document.getElementById("sex").value;
@@ -14,24 +14,24 @@ class Manager {
 		var owner = document.getElementById("owner").value;
 		var address = document.getElementById("address").value;
 
-		data.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
-		return this.createSubLists(data);
+		this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
+		return this.createSubLists(this.pets);
 	}
-	getformUp(data) {
-		//	var image= document.getElementById("image").value; 
+	getformUp() {
+		//	var image= document.getElementById("image").value;
 		var microchip = document.getElementById("microchip").value;
 		var race = document.getElementById("race").value;
 		var owner = document.getElementById("owner").value;
 		var address = document.getElementById("address").value;
-		for (var i = 0; i < data.length; i++) {
-			if (data[i]["microchip"] == "microchip") {
-				data[i]["race"] = race;
-				data[i]["owner"] = owner;
-				data[i]["address"] = address;
+		for (var i = 0; i < this.pets.length; i++) {
+			if (this.pets[i]["microchip"] == "microchip") {
+				this.pets[i]["race"] = race;
+				this.pets[i]["owner"] = owner;
+				this.pets[i]["address"] = address;
 				//data[i]["image"] = image;
 			}
 		}
-		return this.createSubLists(data);
+		return this.createSubLists(this.pets);
 	}
 
 	createSubLists(data) {
