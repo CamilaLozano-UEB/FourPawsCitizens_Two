@@ -126,9 +126,9 @@
 							required>
 						<br>
 						<br>
-						<label for "image_creation"> Imagen de la mascota</label><br>
+						<label for "image_creation"> Imagen de la mascota - Arrastre la imagen
+						</label><br>
 						<div id="image_creation" ondrop="drop(event)" ondragover="allowDrop(event)">
-						Arrastre la imagen
 						</div>
 						<br>
 						<br>
@@ -160,11 +160,11 @@
 					<input type="text" name="address" size="30" id="address" placeholder="Ej: Cr 9 # 111 - 11" required>
 					<br>
 					<br>
-					<label for "image_upgrade"> Imagen de la mascota</label><br>
-					<input type="file" id="image_upgrade" ondrop="dropHandler(event);">
+					<label for "image_upgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
+					<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
+					</div>
 					<br>
 					<br>
-					</input>
 					<p align="center">
 						<button type="button" onclick="getformUp()">Actualizar mascota</button>
 					</p>
