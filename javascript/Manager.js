@@ -15,6 +15,7 @@ class Manager {
 		var address = document.getElementById("address").value;
 
 		data.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
+		return this.createSubLists(data);
 	}
 	getformUp(data) {
 		//	var image= document.getElementById("image").value;
@@ -30,7 +31,7 @@ class Manager {
 				//data[i]["image"] = image;
 			}
 		}
-		return data;
+		return this.createSubLists(data);
 	}
 
 	createSubLists(data) {
