@@ -43,7 +43,8 @@ function changeSize() {
 		choosesizes = sizes[1]
 		numbersizes = choosesizes.length
 		document.formT.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formT.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formT.size.options[i].value = i
 			document.formT.size.options[i].text = choosesizes[i]
 		}
@@ -51,7 +52,8 @@ function changeSize() {
 		choosesizes = sizes[2]
 		numbersizes = choosesizes.length
 		document.formT.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formT.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formT.size.options[i].value = i
 			document.formT.size.options[i].text = choosesizes[i]
 		}
@@ -59,18 +61,17 @@ function changeSize() {
 		choosesizes = sizes[3]
 		numbersizes = choosesizes.length
 		document.formT.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formT.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formT.size.options[i].value = i
 			document.formT.size.options[i].text = choosesizes[i]
 		}
 	} else {
 		document.formT.size.length = 1
-		document.formT.size.options[0].value = 0
 		document.formT.size.options[0].text = "Seleccione"
 	}
 	document.formT.size.options[0].selected = true
 	document.formT.race.length = 1
-	document.formT.race.options[0].value = 0
 	document.formT.race.options[0].text = "Seleccione"
 }
 function changeRace() {
@@ -81,7 +82,8 @@ function changeRace() {
 		changeRaceCat()
 	} else {
 		document.formT.race.length = mistery.length
-		for (i = 0; i < mistery.length; i++) {
+		document.formT.race.options[0].text = mistery[0]
+		for (i = 1; i < mistery.length; i++) {
 			document.formT.race.options[i].value = i
 			document.formT.race.options[i].text = mistery[i]
 		}
@@ -95,13 +97,13 @@ function changeRaceDog() {
 		chooseRace = dogRace[selectRace]
 		numberRace = chooseRace.length
 		document.formT.race.length = numberRace
-		for (i = 0; i < numberRace; i++) {
+		document.formT.race.options[0].text = chooseRace[0]
+		for (i = 1; i < numberRace; i++) {
 			document.formT.race.options[i].value = i
 			document.formT.race.options[i].text = chooseRace[i]
 		}
 	} else {
 		document.formT.race.length = 1
-		document.formT.race.options[0].value = 0
 		document.formT.race.options[0].text = "Seleccione"
 	}
 	document.formT.race.options[0].selected = true
@@ -113,13 +115,13 @@ function changeRaceCat() {
 		chooseRace = catRace[selectRace]
 		numberRace = chooseRace.length
 		document.formT.race.length = numberRace
-		for (i = 0; i < numberRace; i++) {
+		document.formT.race.options[0].text = chooseRace[0]
+		for (i = 1; i < numberRace; i++) {
 			document.formT.race.options[i].value = i
 			document.formT.race.options[i].text = chooseRace[i]
 		}
 	} else {
 		document.formT.race.length = 1
-		document.formT.race.options[0].value = 0
 		document.formT.race.options[0].text = "Seleccione"
 	}
 	document.formT.race.options[0].selected = true
@@ -131,7 +133,8 @@ function changeSize() {
 		choosesizes = sizes[1]
 		numbersizes = choosesizes.length
 		document.formT.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formT.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formT.size.options[i].value = i
 			document.formT.size.options[i].text = choosesizes[i]
 		}
@@ -139,7 +142,8 @@ function changeSize() {
 		choosesizes = sizes[2]
 		numbersizes = choosesizes.length
 		document.formT.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formT.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formT.size.options[i].value = i
 			document.formT.size.options[i].text = choosesizes[i]
 		}
@@ -147,18 +151,17 @@ function changeSize() {
 		choosesizes = sizes[3]
 		numbersizes = choosesizes.length
 		document.formT.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formT.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formT.size.options[i].value = i
 			document.formT.size.options[i].text = choosesizes[i]
 		}
 	} else {
 		document.formT.size.length = 1
-		document.formT.size.options[0].value = 0
 		document.formT.size.options[0].text = "Seleccione"
 	}
 	document.formT.size.options[0].selected = true
 	document.formT.race.length = 1
-	document.formT.race.options[0].value = 0
 	document.formT.race.options[0].text = "Seleccione"
 }
 function changeRaceC() {
@@ -169,7 +172,8 @@ function changeRaceC() {
 		changeRaceCatC()
 	} else {
 		document.formT.race.length = mistery.length
-		for (i = 0; i < mistery.length; i++) {
+		document.formC.race.options[0].text = mistery[0]
+		for (i = 1; i < mistery.length; i++) {
 			document.formC.race.options[i].value = i
 			document.formC.race.options[i].text = mistery[i]
 		}
@@ -183,13 +187,13 @@ function changeRaceDogC() {
 		chooseRace = dogRace[selectRace]
 		numberRace = chooseRace.length
 		document.formC.race.length = numberRace
-		for (i = 0; i < numberRace; i++) {
+		document.formC.race.options[0].text = chooseRace[0]
+		for (i = 1; i < numberRace; i++) {
 			document.formC.race.options[i].value = i
 			document.formC.race.options[i].text = chooseRace[i]
 		}
 	} else {
 		document.formC.race.length = 1
-		document.formC.race.options[0].value = 0
 		document.formC.race.options[0].text = "Seleccione"
 	}
 	document.formC.race.options[0].selected = true
@@ -201,17 +205,17 @@ function changeRaceCatC() {
 		chooseRace = catRace[selectRace]
 		numberRace = chooseRace.length
 		document.formC.race.length = numberRace
-		for (i = 0; i < numberRace; i++) {
+		document.formC.race.options[0].text = chooseRace[0]
+		for (i = 1; i < numberRace; i++) {
 			document.formC.race.options[i].value = i
 			document.formC.race.options[i].text = chooseRace[i]
 		}
 	} else {
 		document.formC.race.length = 1
-		document.formC.race.options[0].value = 0
 		document.formC.race.options[0].text = "Seleccione"
 	}
 	document.formC.race.options[0].selected = true
-} 
+}
 function changeSizeC() {
 	var selectsize
 	selectsize = document.formC.species[document.formC.species.selectedIndex].value
@@ -219,7 +223,8 @@ function changeSizeC() {
 		choosesizes = sizes[1]
 		numbersizes = choosesizes.length
 		document.formC.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formC.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formC.size.options[i].value = i
 			document.formC.size.options[i].text = choosesizes[i]
 		}
@@ -227,7 +232,8 @@ function changeSizeC() {
 		choosesizes = sizes[2]
 		numbersizes = choosesizes.length
 		document.formC.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formC.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formC.size.options[i].value = i
 			document.formC.size.options[i].text = choosesizes[i]
 		}
@@ -235,21 +241,21 @@ function changeSizeC() {
 		choosesizes = sizes[3]
 		numbersizes = choosesizes.length
 		document.formC.size.length = numbersizes
-		for (i = 0; i < numbersizes; i++) {
+		document.formC.size.options[0].text = choosesizes[0]
+		for (i = 1; i < numbersizes; i++) {
 			document.formC.size.options[i].value = i
 			document.formC.size.options[i].text = choosesizes[i]
 		}
 	} else {
 		document.formC.size.length = 1
-		document.formC.size.options[0].value = 0
 		document.formC.size.options[0].text = "Seleccione"
 	}
 	document.formC.size.options[0].selected = true
 	document.formC.race.length = 1
-	document.formC.race.options[0].value = 0
 	document.formC.race.options[0].text = "Seleccione"
 }
- 
+
+
 
 
 
