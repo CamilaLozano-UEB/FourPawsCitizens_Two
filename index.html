@@ -9,7 +9,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="javascript/draganddrop.js"></script>
 	<script src="javascript/form.js"></script>
+	<script>
+		function allowDrop(ev) {ev.preventDefault();}
+		function drag(ev) {ev.dataTransfer.setData("text", ev.target.id);}
+		function drop(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			var element = document.createElement("p");
+			element.textContent = data;
+			ev.target.appendChild(element);
+			element.style.color = "blue";
+		}
+
+	</script>
 
 </head>
 
@@ -166,8 +180,8 @@
 						<br>
 						<br>
 						<label for "image_upgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
-					<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
-					</div>
+						<div id="image_upgrade" ondrop="drop(event)" ondragover="allowDrop(event)">
+						</div>
 						<br>
 						<br>
 						</input> 
