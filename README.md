@@ -11,7 +11,8 @@
 
 2. Link del repositorio de github:
 	-
-        - "Aqui va el link"
+	- https://github.com/CamilaLozano-UEB/FourPawsCitizens_Two.git
+
 3. Intrucciones de uso:
 	-
 	1. Ejecute la pagina web en un servidor, esta cargara automaticamente el .cvs
@@ -29,8 +30,8 @@
 	-
 	-IDE Eclipse Web Development 2020-12	
   
-6. Frameworks y librerias
-  -
+6. Framework y librerias
+	-
   - Bootstrap
   - Ajax
   - d3j 
