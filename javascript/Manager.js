@@ -5,33 +5,77 @@ class Manager {
 
 	getformCreate() {
 		var microchip = document.getElementById("microchip").value.toUpperCase();
-		var species = document.formC.species[document.formC.species.selectedIndex].text.toUpperCase();
-		var sex = document.formC.sex[document.formC.sex.selectedIndex].text.toUpperCase();
-		var size = document.formC.size[document.formC.size.selectedIndex].text.toUpperCase();
-		var danger = document.formC.danger[document.formC.danger.selectedIndex].text.toUpperCase();
-		var neighborhood = document.formC.neighborhood[document.formC.neighborhood.selectedIndex].text.toUpperCase();
-		var race = document.formC.race[document.formC.race.selectedIndex].text.toUpperCase();
-		var owner = document.getElementById("owner").value.toUpperCase();
-		var address = document.getElementById("address").value.toUpperCase();
+		if (!this.verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address)) {
+			if (!this.verifymicrochip(microchip)) {
+				var species = document.formC.species[document.formC.species.selectedIndex].text.toUpperCase();
+				var sex = document.formC.sex[document.formC.sex.selectedIndex].text.toUpperCase();
+				var size = document.formC.size[document.formC.size.selectedIndex].text.toUpperCase();
+				var danger = document.formC.danger[document.formC.danger.selectedIndex].text.toUpperCase();
+				var neighborhood = document.formC.neighborhood[document.formC.neighborhood.selectedIndex].text.toUpperCase();
+				var race = document.formC.race[document.formC.race.selectedIndex].text.toUpperCase();
+				var owner = document.getElementById("owner").value.toUpperCase();
+				var address = document.getElementById("address").value.toUpperCase();
+				var image = document.getElementById("imagecreate").getElementsByClassName("image")[0];
+				this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address, "picture": image });
+			} else {
 
-		this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address });
-		return this.createSubLists(this.pets);
-	}
-	getformUp() {
-		var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
-		var microchip = document.formU.microchip.value;
-		var race = document.getElementById("raceU").value.toUpperCase();
-		var owner = document.getElementById("ownerU").value.toUpperCase();
-		var address = document.getElementById("addressU").value.toUpperCase();
-		for (var i = 0; i < this.pets.length; i++) {
-			if (this.pets[i]["microchip"] === microchip) {
-				this.pets[i]["race"] = race;
-				this.pets[i]["owner"] = owner;
-				this.pets[i]["address"] = address;
-				this.pets[i]["image"] = image.src;
+				alert("El microchip ya se encuentra en uso");
+
 			}
+		} else {
+			alert("Campo vacio");
+
 		}
 		return this.createSubLists(this.pets);
+	}
+
+	verifymicrochip(microchip) {
+		var result = false;
+		for (var i = 0; i < this.pets.length; i++) {
+			if (microchip === this.pets[i].microchip) {
+				result = true;
+			}
+		}
+		return result;
+	}
+
+	verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address) {
+		var result = false
+		if (address === null || sex == "Seleccione:" || image === undefined || size === "Elija primero el tamaño" || size === "Seleccione" || danger === "Seleccione" || species === "Seleccione" || race === "Seleccione" || neighborhood === "Seleccione" || microchip === null || owner === null) {
+			result = true
+		}
+		return result;
+	}
+
+
+
+	getformUp() {
+		var microchip = document.formU.microchip.value;
+		if (!this.verifyselectfieldsUpgrade(race, image, owner, address)) {
+			var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
+			var race = document.getElementById("raceU").value.toUpperCase();
+			var owner = document.getElementById("ownerU").value.toUpperCase();
+			var address = document.getElementById("addressU").value.toUpperCase();
+			for (var i = 0; i < this.pets.length; i++) {
+				if (this.pets[i]["microchip"] === microchip) {
+					this.pets[i]["race"] = race;
+					this.pets[i]["owner"] = owner;
+					this.pets[i]["address"] = address;
+					this.pets[i]["image"] = image.src;
+				}
+			}
+		} else {
+			alert("Campo vacio")
+		}
+		return this.createSubLists(this.pets);
+	}
+
+	verifyselectfieldsUpgrade(race, image, owner, address) {
+		var result = false
+		if (address === null || image === undefined || race === "Seleccione" || owner === null) {
+			result = true
+		}
+		return result;
 	}
 
 	createSubLists(data) {
@@ -94,3 +138,4 @@ class Manager {
 	}
 }
 export { Manager };
+

@@ -5,16 +5,16 @@ var dog = new Array("Seleccione", "Muy Grande", "Grande", "Mediano", "Pequeño",
 var cat = new Array("Seleccione", "Grande", "Mediano", "Pequeño", "Miniatura");
 var mistery = new Array("Seleccione", "No Identificado");
 
-var dogSoBig = new Array("Seleccione", "San Bernardo", "Pastor Aleman");
-var dogBig = new Array("Seleccione", "Labrador Retriever", "Husky Siberiano");
-var dogMiddle = new Array("Seleccione", "Chow Chow", "Golden Retriever");
-var dogSmall = new Array("Seleccione", "Pug", "Shitzu");
-var dogToy = new Array("Seleccione", "Chihuahua", "Pomerania");
+var dogSoBig = new Array("Seleccione", "San Bernardo", "Pastor Aleman", "Gran Danés");
+var dogBig = new Array("Seleccione", "Labrador Retriever", "Husky Siberiano", "Dalmata");
+var dogMiddle = new Array("Seleccione", "Chow Chow", "Golden Retriever", "Pitbull");
+var dogSmall = new Array("Seleccione", "Pug", "Shih tzu", "Salchicha");
+var dogToy = new Array("Seleccione", "Chihuahua", "Pomerania", "Yorkshire Terrier");
 
-var catBig = new Array("Seleccione", "Ragdoll", "Maine Coon");
-var catMiddle = new Array("Seleccione", "Esfinge", "Persa");
-var catSmall = new Array("Seleccione", "Korat", "Skookum");
-var catToy = new Array("Seleccione", "Singapura", "Munchkin");
+var catBig = new Array("Seleccione", "Ragdoll", "Maine Coon", "Gato de Bengala");
+var catMiddle = new Array("Seleccione", "Esfinge", "Persa", "Scotish");
+var catSmall = new Array("Seleccione", "Korat", "Skookum", "Curl americano");
+var catToy = new Array("Seleccione", "Singapura", "Munchkin","Devon rex");
 
 var sizes = [
 	[],

@@ -51,8 +51,6 @@ function handlePreviousLiEvent() {
 function handleNextLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
 	var total = parseInt(totalPages.firstChild.textContent);
-	console.log(actual + "-" + total)
-	console.log(dataPets.length)
 	if (actual < total) {
 		pageLi.firstChild.textContent = (actual + 1);
 		createBody(dataPets[actual + 1], actual + 1);
