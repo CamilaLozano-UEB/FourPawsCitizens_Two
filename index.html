@@ -73,7 +73,7 @@
 
 						<label for "size">Seleccione el tamaño:</label><br>
 						<select name="size" id="size" onchange="changeRaceC()" required>
-							<option value=0>Elija primero la especie</option>
+							<option value="">Elija primero la especie</option>
 						</select>
 						<br>
 						<br>
@@ -117,7 +117,7 @@
 
 						<label for "size">Seleccione la raza:</label><br>
 						<select name=race id="race" required>
-							<option value=0>Elija primero el tamaño</option>
+							<option value="">Elija primero el tamaño</option>
 						</select>
 						<br>
 						<br>
@@ -154,8 +154,10 @@
 						<legend> Formulario de Actualización de mascotas </legend>
 						<label for "microchip">Microchip:</label><br>
 						<input id="microchipField" type="text" name="microchip" disabled><br>
-						<label for "race">Digite la raza:</label><br>
-						<input type="text" name="race" size="30" id="raceU" placeholder="Ej: Pastor alemán" required>
+						<label for "race">Seleccione la raza:</label><br>
+						<select name=race id="raceUp" required>
+						<option value="">Seleccione</option>
+						</select>
 						<br>
 						<br>
 

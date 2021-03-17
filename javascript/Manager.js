@@ -2,6 +2,14 @@ class Manager {
 	constructor(data) {
 		this.pets = data;
 	}
+	getdependenceUp(){
+		var microchip = document.formU.microchip.value;
+		for (var i = 0; i < this.pets.length; i++) {
+			if (microchip === this.pets[i].microchip) {
+				return this.pets[i];
+			}
+		}
+	}
 
 	getformCreate() {
 		var microchip = document.getElementById("microchip").value.toUpperCase();

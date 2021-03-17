@@ -14,7 +14,7 @@ var dogToy = new Array("Seleccione", "Chihuahua", "Pomerania", "Yorkshire Terrie
 var catBig = new Array("Seleccione", "Ragdoll", "Maine Coon", "Gato de Bengala");
 var catMiddle = new Array("Seleccione", "Esfinge", "Persa", "Scotish");
 var catSmall = new Array("Seleccione", "Korat", "Skookum", "Curl americano");
-var catToy = new Array("Seleccione", "Singapura", "Munchkin","Devon rex");
+var catToy = new Array("Seleccione", "Singapura", "Munchkin", "Devon rex");
 
 var sizes = [
 	[],
