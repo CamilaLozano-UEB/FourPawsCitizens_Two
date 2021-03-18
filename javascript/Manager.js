@@ -49,7 +49,7 @@ class Manager {
 
 	verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address) {
 		var result = false
-		if (address === null || sex == "Seleccione:" || image === undefined || size === "Elija primero el tamaño" || size === "Seleccione" || danger === "Seleccione" || species === "Seleccione" || race === "Seleccione" || neighborhood === "Seleccione" || microchip === null || owner === null) {
+		if (address === null || sex == "SELECCIONE" || image === undefined || size === "ELIJA PRIMERO EL ESPECIE" || size === "SELECCIONE" || danger === "SELECCIONE" || species === "SELECCIONE" || race === "SELECCIONE" || race === "ELIJA PRIMERO EL TAMAÑO" || neighborhood === "SELECCIONE" || microchip === null || owner === null) {
 			result = true
 		}
 		return result;
@@ -63,7 +63,7 @@ class Manager {
 		var race = document.formU.race[document.formU.race.selectedIndex].text.toUpperCase();
 		var owner = document.getElementById("ownerU").value.toUpperCase();
 		var address = document.getElementById("addressU").value.toUpperCase();
-		if (!this.verifyselectfieldsUpgrade(race, image, owner, address)) {
+		if (!this.verifyselectfieldsUpgrade(race, image, owner, address)&&microchip!="") {
 			for (var i = 0; i < this.pets.length; i++) {
 				if (this.pets[i]["microchip"] === microchip) {
 					this.pets[i]["race"] = race;
@@ -75,13 +75,13 @@ class Manager {
 		} else {
 			alert("Campo vacio")
 		}
-		console.log(image, race, owner, address)
+		console.log(microchip, race)
 		return this.createSubLists(this.pets);
 	}
 
 	verifyselectfieldsUpgrade(race, image, owner, address) {
 		var result = false
-		if (address === null || image === undefined || race === "Seleccione" || owner === null) {
+		if (address === null || image === undefined || race === "SELECCIONE" || owner === null) {
 			result = true
 		}
 		return result;
