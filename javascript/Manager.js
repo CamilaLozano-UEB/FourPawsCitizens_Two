@@ -75,7 +75,6 @@ class Manager {
 		} else {
 			alert("Campo vacio")
 		}
-		console.log(microchip, race)
 		return this.createSubLists(this.pets);
 	}
 

@@ -28,6 +28,12 @@ function coordinateActions(manager) {
 	document.getElementById("Cpets").addEventListener("click", function() {
 		assignTableNavigationValues(manager.getformCreate());
 		document.getElementById("formC").reset();
+		document.formC.race.length = 1;
+		document.formC.race.options[0].text = "Elija primero el tamaño";
+		document.formC.size.length = 1;
+		document.formC.size.options[0].text = "Elija primero la especie";
+		document.formC.race.options[0].selected = true;
+		document.formC.size.options[0].selected = true;
 		if (document.getElementById("imagecreation").getElementsByClassName("image")[0] !== undefined) {
 			document.getElementById("imagecreation").removeChild(document.getElementById("imagecreation").getElementsByClassName("image")[0]);
 		}
@@ -38,6 +44,9 @@ function coordinateActions(manager) {
 	document.getElementById("Upets").addEventListener("click", function() {
 		assignTableNavigationValues(manager.getformUp());
 		document.getElementById("formU").reset();
+		document.formU.race.length = 1;
+		document.formU.race.options[0].text = "Seleccione";
+		document.formU.race.options[0].selected = true;
 		if (document.getElementById("imageupgrade").getElementsByClassName("image")[0] !== undefined) {
 			document.getElementById("imageupgrade").removeChild(document.getElementById("imageupgrade").getElementsByClassName("image")[0]);
 		}
