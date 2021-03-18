@@ -32,6 +32,9 @@ function coordinateActions(manager) {
 			document.getElementById("imagecreation").removeChild(document.getElementById("imagecreation").getElementsByClassName("image")[0]);
 		}
 	});
+	document.getElementById("raceUp").addEventListener("mouseover", function() {
+		upDependence(manager.getdependenceUp());
+	});
 	document.getElementById("Upets").addEventListener("click", function() {
 		assignTableNavigationValues(manager.getformUp());
 		document.getElementById("formU").reset();
@@ -39,12 +42,10 @@ function coordinateActions(manager) {
 			document.getElementById("imageupgrade").removeChild(document.getElementById("imageupgrade").getElementsByClassName("image")[0]);
 		}
 	});
-	document.getElementById("raceUp").addEventListener("mouseover", function() {
-		upDependence(manager.getdependenceUp());
-	});
+
 }
 function upDependence(data) {
-	
+
 	var dogSoBig = new Array("Seleccione", "San Bernardo", "Pastor Aleman", "Gran Danés");
 	var dogBig = new Array("Seleccione", "Labrador Retriever", "Husky Siberiano", "Dalmata");
 	var dogMiddle = new Array("Seleccione", "Chow Chow", "Golden Retriever", "Pitbull");
@@ -73,124 +74,128 @@ function upDependence(data) {
 	var chooseRace;
 	var numberRace;
 	var i;
-	if (data["species"] === "CANINO") {
-		if (data["size"] === "MUY GRANDE") {
+	if (data === undefined) {
 
-			chooseRace = dogRace[1]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
+	} else {
+		if (data["species"] === "CANINO") {
+			if (data["size"] === "MUY GRANDE") {
+
+				chooseRace = dogRace[1]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "GRANDE") {
+
+				chooseRace = dogRace[2]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "MEDIANO") {
+
+				chooseRace = dogRace[3]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "PEQUEÑO") {
+
+				chooseRace = dogRace[4]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "MINIATURA") {
+
+				chooseRace = dogRace[5]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
 			}
+		} else if (data["species"] === "FELINO") {
+			if (data["size"] === "GRANDE") {
 
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "GRANDE") {
+				chooseRace = catRace[1]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
 
-			chooseRace = dogRace[2]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "MEDIANO") {
+
+				chooseRace = catRace[2]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "PEQUEÑO") {
+
+				chooseRace = catRace[3]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
+			} else if (data["size"] === "MINIATURA") {
+
+				chooseRace = catRace[4]
+				numberRace = chooseRace.length
+				document.formU.race.length = numberRace
+				document.formU.race.options[0].text = chooseRace[0]
+				for (i = 1; i < numberRace; i++) {
+					document.formU.race.options[i].value = i
+					document.formU.race.options[i].text = chooseRace[i]
+				}
+
+				document.formU.race.options[0].selected = true
 			}
-
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "MEDIANO") {
-
-			chooseRace = dogRace[3]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "PEQUEÑO") {
-
-			chooseRace = dogRace[4]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "MINIATURA") {
-
-			chooseRace = dogRace[5]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
+		} else {
+			document.formU.race.length = 2
+			document.formU.race.options[0].text = "Seleccione"
+			document.formU.race.options[1].text = "Sin identificar"
+			document.formU.race.options[1].value = 1
 			document.formU.race.options[0].selected = true
 		}
-	} else if (data["species"] === "FELINO") {
-		if (data["size"] === "GRANDE") {
-
-			chooseRace = catRace[1]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "MEDIANO") {
-
-			chooseRace = catRace[2]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "PEQUEÑO") {
-
-			chooseRace = catRace[3]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
-			document.formU.race.options[0].selected = true
-		} else if (data["size"] === "MINIATURA") {
-
-			chooseRace = catRace[4]
-			numberRace = chooseRace.length
-			document.formU.race.length = numberRace
-			document.formU.race.options[0].text = chooseRace[0]
-			for (i = 1; i < numberRace; i++) {
-				document.formU.race.options[i].value = i
-				document.formU.race.options[i].text = chooseRace[i]
-			}
-
-			document.formU.race.options[0].selected = true
-		}
-	}else{
-		document.formU.race.length = 2
-		document.formU.race.options[0].text = "Seleccione"
-		document.formU.race.options[1].text = "Sin identificar"
-		document.formU.race.options[1].value = 1
-		document.formU.race.options[0].selected = true
 	}
 }
 

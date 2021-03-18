@@ -2,7 +2,7 @@ class Manager {
 	constructor(data) {
 		this.pets = data;
 	}
-	getdependenceUp(){
+	getdependenceUp() {
 		var microchip = document.formU.microchip.value;
 		for (var i = 0; i < this.pets.length; i++) {
 			if (microchip === this.pets[i].microchip) {
@@ -13,25 +13,25 @@ class Manager {
 
 	getformCreate() {
 		var microchip = document.getElementById("microchip").value.toUpperCase();
-		if (!this.verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address)) {
-			if (!this.verifymicrochip(microchip)) {
-				var species = document.formC.species[document.formC.species.selectedIndex].text.toUpperCase();
-				var sex = document.formC.sex[document.formC.sex.selectedIndex].text.toUpperCase();
-				var size = document.formC.size[document.formC.size.selectedIndex].text.toUpperCase();
-				var danger = document.formC.danger[document.formC.danger.selectedIndex].text.toUpperCase();
-				var neighborhood = document.formC.neighborhood[document.formC.neighborhood.selectedIndex].text.toUpperCase();
-				var race = document.formC.race[document.formC.race.selectedIndex].text.toUpperCase();
-				var owner = document.getElementById("owner").value.toUpperCase();
-				var address = document.getElementById("address").value.toUpperCase();
-				var image = document.getElementById("imagecreate").getElementsByClassName("image")[0];
-				this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address, "picture": image });
+		if (!this.verifymicrochip(microchip)) {
+			var species = document.formC.species[document.formC.species.selectedIndex].text.toUpperCase();
+			var sex = document.formC.sex[document.formC.sex.selectedIndex].text.toUpperCase();
+			var size = document.formC.size[document.formC.size.selectedIndex].text.toUpperCase();
+			var danger = document.formC.danger[document.formC.danger.selectedIndex].text.toUpperCase();
+			var neighborhood = document.formC.neighborhood[document.formC.neighborhood.selectedIndex].text.toUpperCase();
+			var race = document.formC.race[document.formC.race.selectedIndex].text.toUpperCase();
+			var owner = document.getElementById("owner").value.toUpperCase();
+			var address = document.getElementById("address").value.toUpperCase();
+			var image = document.getElementById("imagecreation").getElementsByClassName("image")[0];
+			if (!this.verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address)) {
+				this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address, "image": image.src });
 			} else {
+				alert("Campo vacio");
 
-				alert("El microchip ya se encuentra en uso");
 
 			}
 		} else {
-			alert("Campo vacio");
+			alert("El microchip ya se encuentra en uso");
 
 		}
 		return this.createSubLists(this.pets);
@@ -59,11 +59,11 @@ class Manager {
 
 	getformUp() {
 		var microchip = document.formU.microchip.value;
+		var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
+		var race = document.formU.race[document.formU.race.selectedIndex].text.toUpperCase();
+		var owner = document.getElementById("ownerU").value.toUpperCase();
+		var address = document.getElementById("addressU").value.toUpperCase();
 		if (!this.verifyselectfieldsUpgrade(race, image, owner, address)) {
-			var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
-			var race = document.getElementById("raceU").value.toUpperCase();
-			var owner = document.getElementById("ownerU").value.toUpperCase();
-			var address = document.getElementById("addressU").value.toUpperCase();
 			for (var i = 0; i < this.pets.length; i++) {
 				if (this.pets[i]["microchip"] === microchip) {
 					this.pets[i]["race"] = race;
@@ -75,6 +75,7 @@ class Manager {
 		} else {
 			alert("Campo vacio")
 		}
+		console.log(image, race, owner, address)
 		return this.createSubLists(this.pets);
 	}
 
