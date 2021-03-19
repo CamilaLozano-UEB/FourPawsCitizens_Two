@@ -1,6 +1,6 @@
 
 //Creación de las tablas
-
+//Method that create the tables that depends of the pets Sublist created in Class Manager and the indice of the pets, the button for update its included in the table
 function createBody(petsSubList, indice) {
 	if (document.getElementById("tBody") !== null) {
 		document.getElementById("tablePets").removeChild(document.getElementById("tBody"));
@@ -41,7 +41,7 @@ function createBody(petsSubList, indice) {
 	}
 	document.getElementById("tablePets").appendChild(tBody);
 }
-
+// add the listener for the button of update and included the microchip in the forms of Update
 function addButtonEventListener(button) {
 	button.addEventListener("click", function() {
 		if (button.className.split(" ").length > 1) {

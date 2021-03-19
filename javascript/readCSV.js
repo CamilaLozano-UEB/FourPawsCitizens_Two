@@ -212,4 +212,4 @@ function upDependence(data) {
 }
 
 
-/*Promesa fetch api jalar recursos dek server, then funcion que se ejecuta si la función está correcta*/
+
