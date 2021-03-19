@@ -1,11 +1,17 @@
+
+/* Title alignment is established */
+
 .titles{
 	text-align: center;
 }
+
+/*The page background is set*/
 
 body {
   background-image: url('../Data/pets.png');
   }
 
+/*The measures, the border and a scroll are set for the div of the image of the pet registration form*/
 
 #imagecreation {
 	width: 500px;
@@ -14,6 +20,8 @@ body {
 	border: 2px solid rgb(0, 0, 0);
 	overflow: scroll;
 }
+
+/*The measures, the border and a scroll are set for the image div of the pet update form*/
 		
 #imageupgrade{
 	width: 500px;

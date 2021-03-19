@@ -1,5 +1,5 @@
 
-//Filtrado por especies y tamaño
+//Filtered by species and size
 // Atributes in array with the default race and arrays of size that depends of species 
 var dog = new Array("Seleccione", "Muy Grande", "Grande", "Mediano", "Pequeño", "Miniatura");
 var cat = new Array("Seleccione", "Grande", "Mediano", "Pequeño", "Miniatura");

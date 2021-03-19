@@ -2,6 +2,10 @@
 <html>
 
 <head>
+
+	<!--Here are the imports of frameworks and js and stylesheets-->
+
+
 	<title>Four Pets Citizens</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +20,7 @@
 
 </head>
 
-<!--Manejo de pestañas en la página principa en html-->
+<!--Handling of tabs on the main page in html. It is done through lists and assigning tab roles-->
 
 <nav>
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -36,13 +40,18 @@
 </nav>
 
 <body>
+
+	<!--The .cvs is read and loaded and the tabpane is invoked-->
+
+
 	<script type="module" src="javascript/readCSV.js"></script>
 	<div class="tab-content" id="myTabContent">
 		<div class="tab-pane fade show active" id="register" role="tabpanel" aria-labelledby="register-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
 			<div align="center">
 
-				<!--Formulario de registro de nuevas mascotas-->
+				<!-- The new pet registration form is created-->
+
 				<form action="Createpatsform" method="post" autocomplete="off" id="formC" name="formC">
 					<fieldset>
 						<legend> Formulario de Registro de mascotas </legend>
@@ -133,6 +142,9 @@
 						<br>
 						<label for "imagecreation"> Imagen de la mascota - Arrastre la imagen
 						</label><br>
+
+						<!-- Here is the drag and drop for the image-->
+
 						<div id="imagecreation" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 						<br>
 						<br>
@@ -144,7 +156,7 @@
 			</div>
 		</div>
 
-		<!--Formulario de actualización de las mascotas-->
+		<!--The form is created to update the pets of the table-->
 
 		<div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="update-tab">
 			<h2 class="titles">Four Pets Citizens</h2>
@@ -156,7 +168,7 @@
 						<input id="microchipField" type="text" name="microchip" disabled><br>
 						<label for "race">Seleccione la raza:</label><br>
 						<select name=race id="raceUp" required>
-						<option value="">Seleccione</option>
+							<option value="">Seleccione</option>
 						</select>
 						<br>
 						<br>
@@ -184,7 +196,7 @@
 			</div>
 		</div>
 
-		<!--Filtrado y busqueda de mascotas-->
+		<!--The base is established in html for filtering pets by sex, race, species and neighborhood-->
 
 		<div class="tab-pane fade" id="find" role="tabpanel" aria-labelledby="find-tab">
 			<h3 class="titles">Busqueda de mascotas</h3>
@@ -236,7 +248,7 @@
 
 			</form>
 			<br>
-			<!--Uso de las tablas y asignación de indices-->
+			<!--Pagination is invoked and table titles are set to html-->
 
 			<nav>
 				<ul class="pagination justify-content-center">

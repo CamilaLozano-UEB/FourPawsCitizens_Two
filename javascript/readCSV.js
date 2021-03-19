@@ -1,6 +1,4 @@
 
-// Lectura y carga del csv
-
 import { Manager } from "./Manager.js";
 import { assignTableNavigationValues } from "./TableNavigation.js";
 //Method that saves the csv data to data, and then sends to the resolveCharsetErrors method, Manager is installed, 

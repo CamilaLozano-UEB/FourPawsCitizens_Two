@@ -1,5 +1,3 @@
-
-//Creación de las tablas
 //Method that create the tables that depends of the pets Sublist created in Class Manager and the indice of the pets, the button for update its included in the table
 function createBody(petsSubList, indice) {
 	if (document.getElementById("tBody") !== null) {
