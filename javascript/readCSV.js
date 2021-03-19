@@ -3,14 +3,15 @@
 
 import { Manager } from "./Manager.js";
 import { assignTableNavigationValues } from "./TableNavigation.js";
-
+//Method that saves the csv data to data, and then sends to the resolveCharsetErrors method, Manager is installed, 
+//the values are assigned to the pets table and the listeners are assigned.
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
 	const manager = new Manager(data);
 	assignTableNavigationValues(manager.createSubLists(data));
 	coordinateActions(manager);
 });
-
+//Methods that corrected the mistakes in the read of csv as Ñ
 function resolveCharsetErrors(data) {
 	for (var i = 0; i < data.length; i++) {
 		if (data[i]["size"].substring(0, 5) == "PEQUE") {
@@ -21,6 +22,7 @@ function resolveCharsetErrors(data) {
 		}
 	}
 }
+//Method that assigns listeners to update, filter and create buttons that depend on manager
 function coordinateActions(manager) {
 	document.getElementById("filter").addEventListener("click", function() {
 		assignTableNavigationValues(manager.fiterFromMultipleFields());
@@ -53,6 +55,7 @@ function coordinateActions(manager) {
 	});
 
 }
+//Method that depends on data to generate the dependency by size and species in the default races
 function upDependence(data) {
 
 	var dogSoBig = new Array("Seleccione", "San Bernardo", "Pastor Aleman", "Gran Danés");

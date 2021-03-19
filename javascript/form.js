@@ -1,6 +1,6 @@
 
 //Filtrado por especies y tamaño
-
+// Atributes in array with the default race and arrays of size that depends of species 
 var dog = new Array("Seleccione", "Muy Grande", "Grande", "Mediano", "Pequeño", "Miniatura");
 var cat = new Array("Seleccione", "Grande", "Mediano", "Pequeño", "Miniatura");
 var mistery = new Array("Seleccione", "No Identificado");
@@ -15,13 +15,14 @@ var catBig = new Array("Seleccione", "Ragdoll", "Maine Coon", "Gato de Bengala")
 var catMiddle = new Array("Seleccione", "Esfinge", "Persa", "Scotish");
 var catSmall = new Array("Seleccione", "Korat", "Skookum", "Curl americano");
 var catToy = new Array("Seleccione", "Singapura", "Munchkin", "Devon rex");
-
+//Array that have all size
 var sizes = [
 	[],
 	dog,
 	cat,
 	mistery,
 ];
+//array that have all race for dog
 var dogRace = [
 	[],
 	dogSoBig,
@@ -29,13 +30,16 @@ var dogRace = [
 	dogMiddle,
 	dogSmall,
 	dogToy,
-]; var catRace = [
+];
+//array that have all race for cats
+ var catRace = [
 	[],
 	catBig,
 	catMiddle,
 	catSmall,
 	catToy,
 ];
+// Method that change the size in the selectedindex for filters 
 function changeSize() {
 	var selectsize
 	selectsize = document.formT.species[document.formT.species.selectedIndex].value
@@ -74,6 +78,8 @@ function changeSize() {
 	document.formT.race.length = 1
 	document.formT.race.options[0].text = "Seleccione"
 }
+// Method that call the method necessary of race for the species in forms of filter
+
 function changeRace() {
 	selectsize = document.formT.species[document.formT.species.selectedIndex].value
 	if (selectsize == 2) {
@@ -89,6 +95,7 @@ function changeRace() {
 		}
 	}
 }
+// Method that change the race in the selectedindex for the specie Dog in form for filter
 
 function changeRaceDog() {
 	var selectRace
@@ -108,6 +115,7 @@ function changeRaceDog() {
 	}
 	document.formT.race.options[0].selected = true
 }
+// Method that change the race in the selectedindex for the specie Cat in form for filter
 function changeRaceCat() {
 	var selectRace
 	selectRace = document.formT.size[document.formT.size.selectedIndex].value
@@ -126,6 +134,7 @@ function changeRaceCat() {
 	}
 	document.formT.race.options[0].selected = true
 }
+// Method that call the method necessary for the species in the size in forms of filter 
 function changeSize() {
 	var selectsize
 	selectsize = document.formT.species[document.formT.species.selectedIndex].value
@@ -164,6 +173,7 @@ function changeSize() {
 	document.formT.race.length = 1
 	document.formT.race.options[0].text = "Seleccione"
 }
+// Method that call the method necessary of race for the species in forms of create pets
 function changeRaceC() {
 	selectsize = document.formC.species[document.formC.species.selectedIndex].value
 	if (selectsize == 2) {
@@ -179,7 +189,7 @@ function changeRaceC() {
 		}
 	}
 }
-
+// Method that change the race in the selectedindex for the specie Dog in form for create pets
 function changeRaceDogC() {
 	var selectRace
 	selectRace = document.formC.size[document.formC.size.selectedIndex].value
@@ -198,6 +208,7 @@ function changeRaceDogC() {
 	}
 	document.formC.race.options[0].selected = true
 }
+// Method that change the race in the selectedindex for the specie Cat in form for create pets
 function changeRaceCatC() {
 	var selectRace
 	selectRace = document.formC.size[document.formC.size.selectedIndex].value
@@ -216,6 +227,7 @@ function changeRaceCatC() {
 	}
 	document.formC.race.options[0].selected = true
 }
+// Method that change the size in the selectedindex for the specie Cat in form for create pets
 function changeSizeC() {
 	var selectsize
 	selectsize = document.formC.species[document.formC.species.selectedIndex].value

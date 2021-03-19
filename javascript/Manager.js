@@ -1,7 +1,9 @@
 class Manager {
+	//Constructor that receives the animals (data) to save them in pets
 	constructor(data) {
 		this.pets = data;
 	}
+	//returns the array of the selected animal to update
 	getdependenceUp() {
 		var microchip = document.formU.microchip.value;
 		for (var i = 0; i < this.pets.length; i++) {
@@ -10,7 +12,7 @@ class Manager {
 			}
 		}
 	}
-
+    //Method that adds the new animal and saves it in this.pets
 	getformCreate() {
 		var microchip = document.getElementById("microchip").value.toUpperCase();
 		if (!this.verifymicrochip(microchip)) {
@@ -36,7 +38,7 @@ class Manager {
 		}
 		return this.createSubLists(this.pets);
 	}
-
+   //Method that verifies that the microchip exists before in this.pets receives microchip return a boolean
 	verifymicrochip(microchip) {
 		var result = false;
 		for (var i = 0; i < this.pets.length; i++) {
@@ -46,7 +48,7 @@ class Manager {
 		}
 		return result;
 	}
-
+   //Method that verifies that the fields are empty return a boolean for create
 	verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address) {
 		var result = false
 		if (address === null || sex == "SELECCIONE" || image === undefined || size === "ELIJA PRIMERO EL ESPECIE" || size === "SELECCIONE" || danger === "SELECCIONE" || species === "SELECCIONE" || race === "SELECCIONE" || race === "ELIJA PRIMERO EL TAMAÑO" || neighborhood === "SELECCIONE" || microchip === null || owner === null) {
@@ -56,7 +58,7 @@ class Manager {
 	}
 
 
-
+    //Method that adds the update pets components
 	getformUp() {
 		var microchip = document.formU.microchip.value;
 		var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
@@ -77,7 +79,7 @@ class Manager {
 		}
 		return this.createSubLists(this.pets);
 	}
-
+    //Method that verifies that the fields are empty return a boolean for Update
 	verifyselectfieldsUpgrade(race, image, owner, address) {
 		var result = false
 		if (address === null || image === undefined || race === "SELECCIONE" || owner === null) {
@@ -85,7 +87,7 @@ class Manager {
 		}
 		return result;
 	}
-
+    //Method that creates a sublist from data return the sublist
 	createSubLists(data) {
 		var num = parseInt(data.length / 50) + 1;
 		var bidSublist = [];
@@ -100,7 +102,7 @@ class Manager {
 		}
 		return bidSublist
 	}
-
+    //Method that generates a data from the filtering to pass it to the createSublist method
 	fiterFromMultipleFields() {
 		var specie = document.formT.species[document.formT.species.selectedIndex].text.toUpperCase();
 		var size = document.formT.size[document.formT.size.selectedIndex].text.toUpperCase();
