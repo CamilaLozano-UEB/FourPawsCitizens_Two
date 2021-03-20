@@ -1,4 +1,5 @@
-// preventDefault prevents the file from executing by default. If the image is different from undefined, delete it to avoid mistakes
+// preventDefault prevents the file from executing by default.
+// If the image is different from undefined, delete it to avoid mistakes
 
 function allowDrop(ev) {
 	ev.preventDefault();

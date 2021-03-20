@@ -29,7 +29,8 @@ function assignListeners() {
 	nextTenLi.addEventListener("click", handleNextTenLiEvent);
 }
 
-// Paging function that is responsible for going back 10 pages of the table from the current position. It takes the value of the current page and subtracts the 10 positions to go back
+// Paging function that is responsible for going back 10 pages of the table from the current position.
+// It takes the value of the current page and subtracts the 10 positions to go back
 
 function handlePreviousTenLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -42,7 +43,8 @@ function handlePreviousTenLiEvent() {
 	}
 }
 
-//Paging function that is responsible for going back one page from the current position. It takes the value of the current page and subtracts the one position to go back
+// Paging function that is responsible for going back one page from the current position. 
+// It takes the value of the current page and subtracts the one position to go back
 
 function handlePreviousLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -55,7 +57,8 @@ function handlePreviousLiEvent() {
 	}
 }
 
-// Paging function that is responsible for advancing a page from the current position. It takes the value of the current page and adds the next position to it to advance
+// Paging function that is responsible for advancing a page from the current position.
+// It takes the value of the current page and adds the next position to it to advance
 
 function handleNextLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -67,7 +70,8 @@ function handleNextLiEvent() {
 	}
 }
 
-//Paging function that is responsible for advancing 10 pages from the current position. It takes the value of the current page and adds 10 positions to it to advance
+//Paging function that is responsible for advancing 10 pages from the current position.
+// It takes the value of the current page and adds 10 positions to it to advance
 
 function handleNextTenLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
