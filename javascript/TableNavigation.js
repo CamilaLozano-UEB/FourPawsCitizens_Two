@@ -1,6 +1,5 @@
 
-//Manejo y creación de la paginación
-
+// Import the createbody function from tables.js and the variables are created
 import { createBody } from "./tables.js"
 
 var previousTenLi = document.getElementById("previousTen");
@@ -11,6 +10,8 @@ var nextTenLi = document.getElementById("next10");
 var totalPages = document.getElementById("total");
 var dataPets = [];
 
+// function that assigns initial values of table location for paging
+
 function assignTableNavigationValues(subList) {
 	dataPets = subList;
 	pageLi.firstChild.textContent = "1";
@@ -19,12 +20,16 @@ function assignTableNavigationValues(subList) {
 	assignListeners();
 }
 
+//Assign the listeners necessary to create the action in the top buttons of the pagination
+
 function assignListeners() {
 	previousTenLi.addEventListener("click", handlePreviousTenLiEvent);
 	previousLi.addEventListener("click", handlePreviousLiEvent);
 	nextLi.addEventListener("click", handleNextLiEvent);
 	nextTenLi.addEventListener("click", handleNextTenLiEvent);
 }
+
+// Paging function that is responsible for going back 10 pages of the table from the current position. It takes the value of the current page and subtracts the 10 positions to go back
 
 function handlePreviousTenLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -37,6 +42,8 @@ function handlePreviousTenLiEvent() {
 	}
 }
 
+//Paging function that is responsible for going back one page from the current position. It takes the value of the current page and subtracts the one position to go back
+
 function handlePreviousLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
 	if (actual === 1) {
@@ -48,6 +55,8 @@ function handlePreviousLiEvent() {
 	}
 }
 
+// Paging function that is responsible for advancing a page from the current position. It takes the value of the current page and adds the next position to it to advance
+
 function handleNextLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
 	console.log(actual)
@@ -58,6 +67,8 @@ function handleNextLiEvent() {
 	}
 }
 
+//Paging function that is responsible for advancing 10 pages from the current position. It takes the value of the current page and adds 10 positions to it to advance
+
 function handleNextTenLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
 	var total = parseInt(totalPages.firstChild.textContent);
@@ -66,5 +77,7 @@ function handleNextTenLiEvent() {
 		createBody(dataPets[actual + 10], actual + 10);
 	}
 }
+
+//Export assignTableNavigationValues function
 
 export { assignTableNavigationValues };
