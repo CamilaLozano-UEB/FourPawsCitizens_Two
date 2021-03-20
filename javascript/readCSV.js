@@ -5,6 +5,7 @@ import { upDependence } from "./form.js";
 
 //Method that saves the csv data to data, and then sends to the resolveCharsetErrors method, Manager is installed, 
 //the values are assigned to the pets table and the listeners are assigned.
+
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
 	const manager = new Manager(data);
