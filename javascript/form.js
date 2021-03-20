@@ -15,6 +15,7 @@ var catBig = new Array("Seleccione", "Ragdoll", "Maine Coon", "Gato de Bengala")
 var catMiddle = new Array("Seleccione", "Esfinge", "Persa", "Scotish");
 var catSmall = new Array("Seleccione", "Korat", "Skookum", "Curl americano");
 var catToy = new Array("Seleccione", "Singapura", "Munchkin", "Devon rex");
+
 //Array that have all size
 var sizes = [
 	[],
@@ -41,8 +42,11 @@ var catRace = [
 ];
 // Method that change the size in the selectedindex for filters 
 function changeSize() {
-	var selectsize
-	selectsize = document.formT.species[document.formT.species.selectedIndex].value
+
+	var i;
+	var choosesizes;
+	var numbersizes;
+	var selectsize = document.formT.species[document.formT.species.selectedIndex].value
 	if (selectsize == 2) {
 		choosesizes = sizes[1]
 		numbersizes = choosesizes.length
@@ -81,7 +85,10 @@ function changeSize() {
 // Method that call the method necessary of race for the species in forms of filter
 
 function changeRace() {
-	selectsize = document.formT.species[document.formT.species.selectedIndex].value
+
+	var i;
+
+	var selectsize = document.formT.species[document.formT.species.selectedIndex].value
 	if (selectsize == 2) {
 		changeRaceDog()
 	} else if (selectsize == 3) {
@@ -98,8 +105,10 @@ function changeRace() {
 // Method that change the race in the selectedindex for the specie Dog in form for filter
 
 function changeRaceDog() {
-	var selectRace
-	selectRace = document.formT.size[document.formT.size.selectedIndex].value
+	var chooseRace;
+	var numberRace;
+	var i;
+	var selectRace = document.formT.size[document.formT.size.selectedIndex].value
 	if (selectRace != 0) {
 		chooseRace = dogRace[selectRace]
 		numberRace = chooseRace.length
@@ -117,8 +126,10 @@ function changeRaceDog() {
 }
 // Method that change the race in the selectedindex for the specie Cat in form for filter
 function changeRaceCat() {
-	var selectRace
-	selectRace = document.formT.size[document.formT.size.selectedIndex].value
+	var chooseRace;
+	var numberRace;
+	var i;
+	var selectRace = document.formT.size[document.formT.size.selectedIndex].value
 	if (selectRace != 0) {
 		chooseRace = catRace[selectRace]
 		numberRace = chooseRace.length
@@ -137,13 +148,15 @@ function changeRaceCat() {
 
 // Method that call the method necessary of race for the species in forms of create pets
 function changeRaceC() {
-	selectsize = document.formC.species[document.formC.species.selectedIndex].value
+
+	var i;
+	var selectsize = document.formC.species[document.formC.species.selectedIndex].value
 	if (selectsize == 2) {
 		changeRaceDogC()
 	} else if (selectsize == 3) {
 		changeRaceCatC()
 	} else {
-		document.formT.race.length = mistery.length
+		document.formC.race.length = mistery.length
 		document.formC.race.options[0].text = mistery[0]
 		for (i = 1; i < mistery.length; i++) {
 			document.formC.race.options[i].value = i
@@ -153,8 +166,10 @@ function changeRaceC() {
 }
 // Method that change the race in the selectedindex for the specie Dog in form for create pets
 function changeRaceDogC() {
-	var selectRace
-	selectRace = document.formC.size[document.formC.size.selectedIndex].value
+	var chooseRace;
+	var numberRace;
+	var i;
+	var selectRace = document.formC.size[document.formC.size.selectedIndex].value
 	if (selectRace != 0) {
 		chooseRace = dogRace[selectRace]
 		numberRace = chooseRace.length
@@ -172,8 +187,10 @@ function changeRaceDogC() {
 }
 // Method that change the race in the selectedindex for the specie Cat in form for create pets
 function changeRaceCatC() {
-	var selectRace
-	selectRace = document.formC.size[document.formC.size.selectedIndex].value
+	var chooseRace;
+	var numberRace;
+	var i;
+	var selectRace = document.formC.size[document.formC.size.selectedIndex].value
 	if (selectRace != 0) {
 		chooseRace = catRace[selectRace]
 		numberRace = chooseRace.length
@@ -191,8 +208,11 @@ function changeRaceCatC() {
 }
 // Method that change the size in the selectedindex for the specie Cat in form for create pets
 function changeSizeC() {
-	var selectsize
-	selectsize = document.formC.species[document.formC.species.selectedIndex].value
+
+	var i
+	var choosesizes
+	var numbersizes
+	var selectsize = document.formC.species[document.formC.species.selectedIndex].value
 	if (selectsize == 2) {
 		choosesizes = sizes[1]
 		numbersizes = choosesizes.length
@@ -228,11 +248,12 @@ function changeSizeC() {
 	document.formC.race.length = 1
 	document.formC.race.options[0].text = "Seleccione"
 }
-
+//Method that depends on data to generate the dependency by size and species in the default races
 function upDependence(data) {
 	var chooseRace;
 	var numberRace;
 	var i;
+
 	if (data === undefined) {
 
 	} else {
@@ -357,4 +378,13 @@ function upDependence(data) {
 		}
 	}
 }
-export { upDependence };
+
+//Method that assign the listeners of the forms create and filter
+function assignListenerForms() {
+	document.formC.species.addEventListener("change", changeSizeC);
+	document.formC.size.addEventListener("change", changeRaceC);
+	document.formT.species.addEventListener("change", changeSize);
+	document.formT.size.addEventListener("change", changeRace);
+
+}
+export { upDependence, assignListenerForms };
