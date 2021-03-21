@@ -62,7 +62,6 @@ function handlePreviousLiEvent() {
 
 function handleNextLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
-	console.log(actual)
 	var total = parseInt(totalPages.firstChild.textContent);
 	if (actual < total) {
 		pageLi.firstChild.textContent = (actual + 1);
