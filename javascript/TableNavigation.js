@@ -39,7 +39,7 @@ function handlePreviousTenLiEvent() {
 		createBody(dataPets[0], 0);
 	} else {
 		pageLi.firstChild.textContent = (actual - 10);
-		createBody(dataPets[actual - 10], actual - 10);
+		createBody(dataPets[actual - 11], actual - 11);
 	}
 }
 
@@ -53,7 +53,7 @@ function handlePreviousLiEvent() {
 		createBody(dataPets[0], 0);
 	} else {
 		pageLi.firstChild.textContent = (actual - 1);
-		createBody(dataPets[actual - 1], actual - 1);
+		createBody(dataPets[actual - 2], actual - 2);
 	}
 }
 
@@ -62,11 +62,10 @@ function handlePreviousLiEvent() {
 
 function handleNextLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
-	console.log(actual)
 	var total = parseInt(totalPages.firstChild.textContent);
 	if (actual < total) {
 		pageLi.firstChild.textContent = (actual + 1);
-		createBody(dataPets[actual], actual);
+		createBody(dataPets[actual + 1], actual + 1);
 	}
 }
 

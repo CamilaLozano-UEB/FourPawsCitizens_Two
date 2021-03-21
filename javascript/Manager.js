@@ -12,7 +12,7 @@ class Manager {
 			}
 		}
 	}
-    //Method that adds the new animal and saves it in this.pets
+	//Method that adds the new animal and saves it in this.pets
 	getformCreate() {
 		var microchip = document.getElementById("microchip").value.toUpperCase();
 		if (!this.verifymicrochip(microchip)) {
@@ -25,12 +25,12 @@ class Manager {
 			var owner = document.getElementById("owner").value.toUpperCase();
 			var address = document.getElementById("address").value.toUpperCase();
 			var image = document.getElementById("imagecreation").getElementsByClassName("image")[0];
-			if (!this.verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address)) {
-				this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address, "image": image.src });
+			var longitude = document.getElementById("longitudeC").value.toUpperCase();
+			var latitude = document.getElementById("latidudeC").value.toUpperCase();
+			if (!this.verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address, latitude, longitude)) {
+				this.pets.push({ "microchip": microchip, "species": species, "sex": sex, "size": size, "potentDangerous": danger, "neighborhood": neighborhood, "race": race, "owner": owner, "address": address, "image": image.src, "longitude": longitude, "latitude": latitude });
 			} else {
 				alert("Campo vacio");
-
-
 			}
 		} else {
 			alert("El microchip ya se encuentra en uso");
@@ -38,7 +38,7 @@ class Manager {
 		}
 		return this.createSubLists(this.pets);
 	}
-   //Method that verifies that the microchip exists before in this.pets receives microchip return a boolean
+	//Method that verifies that the microchip exists before in this.pets receives microchip return a boolean
 	verifymicrochip(microchip) {
 		var result = false;
 		for (var i = 0; i < this.pets.length; i++) {
@@ -48,30 +48,34 @@ class Manager {
 		}
 		return result;
 	}
-   //Method that verifies that the fields are empty return a boolean for create
-	verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address) {
+	//Method that verifies that the fields are empty return a boolean for create
+	verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address, latitude, longitude) {
 		var result = false
-		if (address === null || sex == "SELECCIONE" || image === undefined || size === "ELIJA PRIMERO EL ESPECIE" || size === "SELECCIONE" || danger === "SELECCIONE" || species === "SELECCIONE" || race === "SELECCIONE" || race === "ELIJA PRIMERO EL TAMAÑO" || neighborhood === "SELECCIONE" || microchip === null || owner === null) {
+		if (address === null || sex == "SELECCIONE" || image === undefined || size === "ELIJA PRIMERO EL ESPECIE" || size === "SELECCIONE" || danger === "SELECCIONE" || species === "SELECCIONE" || race === "SELECCIONE" || race === "ELIJA PRIMERO EL TAMAÑO" || neighborhood === "SELECCIONE" || microchip === null || owner === null || longitude === null || latitude === null || longitude === "" || latitude === "") {
 			result = true
 		}
 		return result;
 	}
 
 
-    //Method that adds the update pets components
+	//Method that adds the update pets components
 	getformUp() {
 		var microchip = document.formU.microchip.value;
 		var image = document.getElementById("imageupgrade").getElementsByClassName("image")[0];
 		var race = document.formU.race[document.formU.race.selectedIndex].text.toUpperCase();
 		var owner = document.getElementById("ownerU").value.toUpperCase();
 		var address = document.getElementById("addressU").value.toUpperCase();
-		if (!this.verifyselectfieldsUpgrade(race, image, owner, address)&&microchip!="") {
+		var longitude = document.getElementById("longitudeU").value.toUpperCase();
+		var latitude = document.getElementById("latidudeU").value.toUpperCase();
+		if (!this.verifyselectfieldsUpgrade(race, image, owner, address, longitude, latitude) && microchip != "") {
 			for (var i = 0; i < this.pets.length; i++) {
 				if (this.pets[i]["microchip"] === microchip) {
 					this.pets[i]["race"] = race;
 					this.pets[i]["owner"] = owner;
 					this.pets[i]["address"] = address;
 					this.pets[i]["image"] = image.src;
+					this.pets[i]["longitude"] = longitude;
+					this.pets[i]["latitude"] = latitude;
 				}
 			}
 		} else {
@@ -79,15 +83,17 @@ class Manager {
 		}
 		return this.createSubLists(this.pets);
 	}
-    //Method that verifies that the fields are empty return a boolean for Update
-	verifyselectfieldsUpgrade(race, image, owner, address) {
-		var result = false
-		if (address === null || image === undefined || race === "SELECCIONE" || owner === null) {
+	//Method that verifies that the fields are empty return a boolean for Update
+	verifyselectfieldsUpgrade(race, image, owner, address, longitude, latitude) {
+		var result = false;
+		if (address === null || image === undefined || race === "SELECCIONE" || owner === null || longitude === null || latitude === null || longitude === "" || latitude === "") {
 			result = true
 		}
 		return result;
 	}
-    //Method that creates a sublist from data return the sublist
+
+	//Method that creates a sublist from data return the sublist
+
 	createSubLists(data) {
 		var num = parseInt(data.length / 50) + 1;
 		var bidSublist = [];
@@ -102,7 +108,9 @@ class Manager {
 		}
 		return bidSublist
 	}
-    //Method that generates a data from the filtering to pass it to the createSublist method
+
+	//Method that generates a data from the filtering to pass it to the createSublist method
+
 	fiterFromMultipleFields() {
 		var specie = document.formT.species[document.formT.species.selectedIndex].text.toUpperCase();
 		var size = document.formT.size[document.formT.size.selectedIndex].text.toUpperCase();

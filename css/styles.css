@@ -31,3 +31,23 @@ body {
 	border: 2px solid rgb(0, 0, 0);
 	
 }
+
+#mapC {
+
+	width: 70%;
+	height: 500px;
+}
+
+#mapU {
+	width: 70%;
+	height: 500px;
+}
+
+.marker1 {
+	background-image: url('../Data/Huella.png');
+	background-size: cover;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+}

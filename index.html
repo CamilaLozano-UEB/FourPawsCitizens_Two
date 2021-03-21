@@ -13,9 +13,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script src="https://d3js.org/d3.v6.min.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
 	<script src="javascript/draganddrop.js"></script>
-<!--	<script src="javascript/form.js"></script>
--->	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
 
 
 </head>
@@ -81,7 +82,7 @@
 						<br>
 
 						<label for "size">Seleccione el tamaño:</label><br>
-						<select name="size" id="size"  required>
+						<select name="size" id="size" required>
 							<option value="">Elija primero la especie</option>
 						</select>
 						<br>
@@ -148,6 +149,17 @@
 						<div id="imagecreation" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 						<br>
 						<br>
+						<p>Ingrese las coordenadas de la mascota</p><br>
+						<label for "longitudeC">Longitud:</label>
+						<input type="text" name="longitudeC" size="30" id="longitudeC" required>
+						<label for "latidudeC">Latitud:</label>
+						<input type="text" name="latidudeC" size="30" id="latidudeC" required>
+						<button type="button" id="mapCButton">Buscar</button>
+						<br>
+						<br>
+						<div id="mapC"></div>
+						<br>
+						<br>
 						<p align="center">
 							<button type="button" id="Cpets">Registrar mascota</button>
 						</p>
@@ -179,7 +191,7 @@
 						<br>
 						<label for "address">Digite la dirección:</label><br>
 						<input type="text" name="address" size="30" id="addressU" placeholder="Ej: Cr 9 # 111 - 11"
-							required>
+							required></input>
 						<br>
 						<br>
 						<label for "imageupgrade"> Imagen de la mascota - Arrastre la imagen</label><br>
@@ -187,7 +199,17 @@
 						</div>
 						<br>
 						<br>
-						</input>
+						<p>Ingrese las coordenadas de la mascota</p><br>
+						<label for "longitudeU">Longitud:</label>
+						<input type="text" name="longitudeU" size="30" id="longitudeU" required>
+						<label for "latidudeU">Latitud:</label>
+						<input type="text" name="latidudeU" size="30" id="latidudeU" required>
+						<button type="button" id="mapUButton">Buscar</button>
+						<br>
+						<br>
+						<div id="mapU"></div>
+						<br>
+						<br>
 						<p align="center">
 							<button type="button" id="Upets">Actualizar mascota</button>
 						</p>
@@ -272,7 +294,7 @@
 			<table id="tablePets" class="table table-striped">
 				<thead>
 					<tr>
-						<th scope="col">acciones</th>
+						<th scope="col">Update</th>
 						<th scope="col">#</th>
 						<th scope="col">microchip</th>
 						<th scope="col">specie</th>
@@ -284,6 +306,8 @@
 						<th scope="col">owner</th>
 						<th scope="col">address</th>
 						<th scope="col">picture</th>
+						<th scope="col">Longitude</th>
+						<th scope="col">Latitude</th>
 					</tr>
 				</thead>
 			</table>
