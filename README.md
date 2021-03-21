@@ -9,8 +9,12 @@
 2. Link del repositorio de github:
 	-
 	- https://github.com/CamilaLozano-UEB/FourPawsCitizens_Two.git
+	
+3. Link Github pages
+	-
+	- https://camilalozano-ueb.github.io/FourPawsCitizens_Two/
 
-3. Intrucciones de uso:
+4. Intrucciones de uso:
 	-
 	1. Ejecute la pagina web en un servidor, esta cargara automaticamente el .cvs
 	2. Podra navegar por tres pestañas: Registrar mascota, tabla de mascotas y actualizar mascotas.
@@ -21,19 +25,17 @@
 	7. Para actualizar un animal debe ir primero a la tabla, seleccione la mascota que desea actualizar y clickee el botón de "actualizar", aqui podra agregar los campos faltantes al registro de la mascota, teniendo como identificador el microchip que se conservara como un dato estatico. Cuando termine de agregar los datos que desea actualizar, clickee actualizar y el registro aparecera con los datos que registró.
 	8. Para usar los mapas debe tener en cuenta los limites de la latitud (-90, 90) y la longitud (-180, 180). Si desea ubicar una mascota en el mapa puede poner las coordenada y registrarla o actualizarla; tambien puede ubicarla seleccionando en el mapa para colocar un marcador que le dara las coordenadas y asi podra registrarlas.
 
-4. Lenguaje de Codificación
+5. Lenguaje de Codificación
 	-
 	- UTF-8	
 
-5. Entorno de Desarrollo
+6. Entorno de Desarrollo
 	-
 	-IDE Eclipse Web Development 2020-12	
   
-6. Framework, librerias y API
+7. Framework, librerias y API
 	-
   - Bootstrap
   - Ajax
   - d3j 
   - mapbox
-
-
