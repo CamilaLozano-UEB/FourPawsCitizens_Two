@@ -4,8 +4,10 @@ import { assignTableNavigationValues } from "./TableNavigation.js";
 import { upDependence, assignListenerForms } from "./form.js";
 import { cretateCreateMap, cretateUpdateMap } from "./Maps.js"
 
-//Method that saves the csv data to data, and then sends to the resolveCharsetErrors method, Manager is installed, 
-//the values are assigned to the pets table and the listeners are assigned.
+/**
+Method that saves the csv data to data, and then sends to the resolveCharsetErrors method, Manager is instantiated, 
+the values are assigned to the pets table and the listeners are assigned.
+ */
 
 d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	resolveCharsetErrors(data);
@@ -15,7 +17,13 @@ d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	cretateCreateMap("mapC", "longitudeC", "latidudeC");
 	cretateUpdateMap("mapU", "longitudeU", "latidudeU");
 });
-//Methods that corrected the mistakes in the read of csv as Ñ
+
+
+/**
+@param data, fix for encoding errors
+Function that corrects the coding errors of the letter Ñ
+ */
+
 function resolveCharsetErrors(data) {
 	for (var i = 0; i < data.length; i++) {
 		if (data[i]["size"].substring(0, 5) == "PEQUE") {
@@ -26,7 +34,11 @@ function resolveCharsetErrors(data) {
 		}
 	}
 }
-//Method that assigns listeners to update, filter and create buttons that depend on manager
+
+/**
+@param manager, manager object instance
+Function that assigns listeners to update, filter and create buttons. This method uses the manager information
+ */
 function coordinateActions(manager) {
 	assignListenerForms();
 	document.getElementById("filter").addEventListener("click", function() {

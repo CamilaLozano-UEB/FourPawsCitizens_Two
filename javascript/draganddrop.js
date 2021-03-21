@@ -1,5 +1,9 @@
-// preventDefault prevents the file from executing by default.
-// If the image is different from undefined, delete it to avoid mistakes
+
+/**
+@param ev, image's event 
+preventDefault prevents the file from executing by default.
+If the image is different from undefined, delete it to avoid there is not more than one image
+ */
 
 function allowDrop(ev) {
 	ev.preventDefault();
@@ -8,7 +12,11 @@ function allowDrop(ev) {
 	}
 }
 
-// It takes the image file and classifies it, if it is an image it saves it, if it does not return an alert
+/**
+@param ev, image's event
+It takes the image file and classifies it, if it is an image it saves it, if it does not return an alert 
+and creates an image tag that allows the visualization of the image
+ */
 
 function drop(ev) {
 	ev.preventDefault();

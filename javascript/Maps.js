@@ -1,6 +1,10 @@
+//custom mapbox access token
+
 mapboxgl.accessToken = 'pk.eyJ1IjoibmlwZW1vMzAyMnAiLCJhIjoiY2ttZHh5bHhkMHBsMTJwbGp0aDltMWl2ZiJ9.w3m-oPl-u5Ru-cri6HR-zg';
 var map;
 var map2;
+
+//
 
 function cretateCreateMap(mapId, pLongitudeFieldId, pLatitudeFieldId) {
 	map = new mapboxgl.Map({

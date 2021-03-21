@@ -1,4 +1,11 @@
-//Method that create the tables that depends of the pets Sublist created in Class Manager and the indice of the pets, the button for update its included in the table
+// Método que crea las tablas que dependen de la Sublista de mascotas creada en Class Manager y el índice de las mascotas. El botón para actualizar está incluido en la tabla.
+
+/**
+@param petsSubList, array of 50 pets, sent from navigation
+@param indice, position in the table. Corresponds to the numbers in the rows
+
+Take the sublist of objects, create rows of each object and put in each column of that same row the attributes of that object
+ */
 function createBody(petsSubList, indice) {
 	if (document.getElementById("tBody") !== null) {
 		document.getElementById("tablePets").removeChild(document.getElementById("tBody"));
@@ -21,6 +28,8 @@ function createBody(petsSubList, indice) {
 		th.textContent = (indice * 50) + i;
 		tr.appendChild(th);
 
+// The attributes of each object are obtained and converted into columns that are added to the row
+
 		for (const property in petsSubList[i]) {
 			var td = document.createElement("td");
 			td.textContent = petsSubList[i][property];
@@ -39,7 +48,13 @@ function createBody(petsSubList, indice) {
 	}
 	document.getElementById("tablePets").appendChild(tBody);
 }
-// add the listener for the button of update and included the microchip in the forms of Update
+
+/**
+@param button, element to which the event listener is going to be added
+
+Add a listener to each button, which when clicked, passes the value of the microchip field of the table to the update form
+ */
+
 function addButtonEventListener(button) {
 	button.addEventListener("click", function() {
 		if (button.className.split(" ").length > 1) {

@@ -1,5 +1,7 @@
 
-// Import the createbody function from tables.js and the variables are created
+/**
+Import the createbody function from tables.js and the variables are created
+*/
 import { createBody } from "./tables.js"
 
 var previousTenLi = document.getElementById("previousTen");
@@ -10,8 +12,10 @@ var nextTenLi = document.getElementById("next10");
 var totalPages = document.getElementById("total");
 var dataPets = [];
 
-// function that assigns initial values of table location for paging
-
+/** 
+@param sublist, two-dimensional arrangement containing all the pet information
+function that assigns initial values of table location for paging
+*/
 function assignTableNavigationValues(subList) {
 	dataPets = subList;
 	pageLi.firstChild.textContent = "1";
@@ -20,7 +24,9 @@ function assignTableNavigationValues(subList) {
 	assignListeners();
 }
 
-//Assign the listeners necessary to create the action in the top buttons of the pagination
+/** 
+Assign the listeners necessary to create the action in the top buttons of the navigation
+*/
 
 function assignListeners() {
 	previousTenLi.addEventListener("click", handlePreviousTenLiEvent);
@@ -28,10 +34,10 @@ function assignListeners() {
 	nextLi.addEventListener("click", handleNextLiEvent);
 	nextTenLi.addEventListener("click", handleNextTenLiEvent);
 }
-
-// Paging function that is responsible for going back 10 pages of the table from the current position.
-// It takes the value of the current page and subtracts the 10 positions to go back
-
+/**
+Paging function that is responsible for going back 10 pages of the table from the current position.
+It takes the value of the current page and subtracts the 10 positions to go back. Send that array position to the table
+ */
 function handlePreviousTenLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
 	if (actual <= 10) {
@@ -42,9 +48,11 @@ function handlePreviousTenLiEvent() {
 		createBody(dataPets[actual - 11], actual - 11);
 	}
 }
+/**
+Paging function that is responsible for going back one page from the current position. 
+It takes the value of the current page and subtracts the one position to go back. Send that array position to the table
+ */
 
-// Paging function that is responsible for going back one page from the current position. 
-// It takes the value of the current page and subtracts the one position to go back
 
 function handlePreviousLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -56,9 +64,11 @@ function handlePreviousLiEvent() {
 		createBody(dataPets[actual - 2], actual - 2);
 	}
 }
-
-// Paging function that is responsible for advancing a page from the current position.
-// It takes the value of the current page and adds the next position to it to advance
+/**
+Paging function that is responsible for advancing a page from the current position.
+It takes the value of the current page and adds the next position to it to advance. Send the next position of the array
+Send that array position to the table
+ */
 
 function handleNextLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -69,8 +79,10 @@ function handleNextLiEvent() {
 	}
 }
 
-//Paging function that is responsible for advancing 10 pages from the current position.
-// It takes the value of the current page and adds 10 positions to it to advance
+/**
+Paging function that is responsible for advancing 10 pages from the current position.
+It takes the value of the current page and adds 10 positions to it to advance. Send that array position to the table
+ */
 
 function handleNextTenLiEvent() {
 	var actual = parseInt(pageLi.firstChild.textContent);
@@ -80,7 +92,8 @@ function handleNextTenLiEvent() {
 		createBody(dataPets[actual + 10], actual + 10);
 	}
 }
-
-//Export assignTableNavigationValues function
+/**
+Export assignTableNavigationValues function
+ */
 
 export { assignTableNavigationValues };

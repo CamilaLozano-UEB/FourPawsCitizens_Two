@@ -1,6 +1,8 @@
+/**
+Filtered by species and size
+Atributes in array with the default race and arrays of size that depends of species 
+ */
 
-//Filtered by species and size
-// Atributes in array with the default race and arrays of size that depends of species 
 var dog = new Array("Seleccione", "Muy Grande", "Grande", "Mediano", "Pequeño", "Miniatura");
 var cat = new Array("Seleccione", "Grande", "Mediano", "Pequeño", "Miniatura");
 var mistery = new Array("Seleccione", "No Identificado");
@@ -16,14 +18,21 @@ var catMiddle = new Array("Seleccione", "Esfinge", "Persa", "Scotish");
 var catSmall = new Array("Seleccione", "Korat", "Skookum", "Curl americano");
 var catToy = new Array("Seleccione", "Singapura", "Munchkin", "Devon rex");
 
-//Array that have all size
+/**
+Array that have all size
+ */
+
 var sizes = [
 	[],
 	dog,
 	cat,
 	mistery,
 ];
-//array that have all race for dog
+
+/**
+ array that have all race for dog
+*/
+
 var dogRace = [
 	[],
 	dogSoBig,
@@ -40,7 +49,10 @@ var catRace = [
 	catSmall,
 	catToy,
 ];
-// Method that change the size in the selectedindex for filters 
+
+/**
+Method that change the size in the selectedindex for filters 
+ */
 function changeSize() {
 
 	var i;
@@ -82,7 +94,9 @@ function changeSize() {
 	document.formT.race.length = 1
 	document.formT.race.options[0].text = "Seleccione"
 }
-// Method that call the method necessary of race for the species in forms of filter
+/**
+Method that call the method necessary of race for the species in forms of filter
+ */
 
 function changeRace() {
 
