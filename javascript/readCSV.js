@@ -2,6 +2,7 @@
 import { Manager } from "./Manager.js";
 import { assignTableNavigationValues } from "./TableNavigation.js";
 import { upDependence, assignListenerForms } from "./form.js";
+import { cretateCreateMap, cretateUpdateMap } from "./Maps.js"
 
 //Method that saves the csv data to data, and then sends to the resolveCharsetErrors method, Manager is installed, 
 //the values are assigned to the pets table and the listeners are assigned.
@@ -11,7 +12,8 @@ d3.dsv(";", "Data/pets-citizens.csv").then(function(data) {
 	const manager = new Manager(data);
 	assignTableNavigationValues(manager.createSubLists(data));
 	coordinateActions(manager);
-	
+	cretateCreateMap("mapC", "longitudeC", "latidudeC");
+	cretateUpdateMap("mapU", "longitudeU", "latidudeU");
 });
 //Methods that corrected the mistakes in the read of csv as Ñ
 function resolveCharsetErrors(data) {
@@ -56,6 +58,4 @@ function coordinateActions(manager) {
 			document.getElementById("imageupgrade").removeChild(document.getElementById("imageupgrade").getElementsByClassName("image")[0]);
 		}
 	});
-
 }
-

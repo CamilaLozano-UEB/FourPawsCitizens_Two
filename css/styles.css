@@ -31,3 +31,32 @@ body {
 	border: 2px solid rgb(0, 0, 0);
 	
 }
+
+#mapC {
+
+	width: 70%;
+	height: 500px;
+}
+
+#mapU {
+	width: 70%;
+	height: 500px;
+}
+
+.marker1 {
+	background-image: url('../Data/mapbox-icon.png');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.mapboxgl-popup {
+	max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
