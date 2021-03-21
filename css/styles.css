@@ -39,7 +39,7 @@ body {
 }
 
 #mapU {
-	width: 70%;
+	width: 700px;
 	height: 500px;
 }
 
@@ -50,13 +50,4 @@ body {
 	height: 50px;
 	border-radius: 50%;
 	cursor: pointer;
-}
-
-.mapboxgl-popup {
-	max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
 }

@@ -51,7 +51,7 @@ class Manager {
 	//Method that verifies that the fields are empty return a boolean for create
 	verifyselectfieldsCreate(sex, size, danger, species, race, image, neighborhood, microchip, owner, address, latitude, longitude) {
 		var result = false
-		if (address === null || sex == "SELECCIONE" || image === undefined || size === "ELIJA PRIMERO EL ESPECIE" || size === "SELECCIONE" || danger === "SELECCIONE" || species === "SELECCIONE" || race === "SELECCIONE" || race === "ELIJA PRIMERO EL TAMAÑO" || neighborhood === "SELECCIONE" || microchip === null || owner === null || longitude === null || latitude === null) {
+		if (address === null || sex == "SELECCIONE" || image === undefined || size === "ELIJA PRIMERO EL ESPECIE" || size === "SELECCIONE" || danger === "SELECCIONE" || species === "SELECCIONE" || race === "SELECCIONE" || race === "ELIJA PRIMERO EL TAMAÑO" || neighborhood === "SELECCIONE" || microchip === null || owner === null || longitude === null || latitude === null || longitude === "" || latitude === "") {
 			result = true
 		}
 		return result;
@@ -74,8 +74,8 @@ class Manager {
 					this.pets[i]["owner"] = owner;
 					this.pets[i]["address"] = address;
 					this.pets[i]["image"] = image.src;
-					this.pets[i]["longitude"] = longitude
-					this.pets[i]["latitude"] = latitude
+					this.pets[i]["longitude"] = longitude;
+					this.pets[i]["latitude"] = latitude;
 				}
 			}
 		} else {
@@ -85,8 +85,8 @@ class Manager {
 	}
 	//Method that verifies that the fields are empty return a boolean for Update
 	verifyselectfieldsUpgrade(race, image, owner, address, longitude, latitude) {
-		var result = false
-		if (address === null || image === undefined || race === "SELECCIONE" || owner === null || longitude === null || latitude === null) {
+		var result = false;
+		if (address === null || image === undefined || race === "SELECCIONE" || owner === null || longitude === null || latitude === null || longitude === "" || latitude === "") {
 			result = true
 		}
 		return result;
