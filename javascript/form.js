@@ -116,7 +116,9 @@ function changeRace() {
 		}
 	}
 }
-// Method that change the race in the selectedindex for the specie Dog in form for filter
+/**
+Method that change the race in the selectedindex for the specie Dog in form for filter
+ */
 
 function changeRaceDog() {
 	var chooseRace;
@@ -138,7 +140,9 @@ function changeRaceDog() {
 	}
 	document.formT.race.options[0].selected = true
 }
-// Method that change the race in the selectedindex for the specie Cat in form for filter
+/**
+Method that change the race in the selectedindex for the specie Cat in form for filter
+ */
 function changeRaceCat() {
 	var chooseRace;
 	var numberRace;
@@ -159,8 +163,10 @@ function changeRaceCat() {
 	}
 	document.formT.race.options[0].selected = true
 }
+/**
+ Method that call the method necessary of race for the species in forms of create pets
+ */
 
-// Method that call the method necessary of race for the species in forms of create pets
 function changeRaceC() {
 
 	var i;
@@ -178,7 +184,11 @@ function changeRaceC() {
 		}
 	}
 }
-// Method that change the race in the selectedindex for the specie Dog in form for create pets
+
+/**
+Method that change the race in the selectedindex for the specie Dog in form for create pets
+ */
+ 
 function changeRaceDogC() {
 	var chooseRace;
 	var numberRace;
@@ -199,7 +209,11 @@ function changeRaceDogC() {
 	}
 	document.formC.race.options[0].selected = true
 }
-// Method that change the race in the selectedindex for the specie Cat in form for create pets
+
+/**
+Method that change the race in the selectedindex for the specie Cat in form for create pets
+ */
+
 function changeRaceCatC() {
 	var chooseRace;
 	var numberRace;
@@ -220,7 +234,11 @@ function changeRaceCatC() {
 	}
 	document.formC.race.options[0].selected = true
 }
-// Method that change the size in the selectedindex for the specie Cat in form for create pets
+
+/**
+Method that change the size in the selectedindex for the specie Cat in form for create pets
+ */
+ 
 function changeSizeC() {
 
 	var i
@@ -262,7 +280,12 @@ function changeSizeC() {
 	document.formC.race.length = 1
 	document.formC.race.options[0].text = "Seleccione"
 }
-//Method that depends on data to generate the dependency by size and species in the default races
+
+/**
+@param data, array containing pet information
+Method that depends on data to generate the dependency by size and species in the default races
+ */
+//
 function upDependence(data) {
 	var chooseRace;
 	var numberRace;
@@ -393,7 +416,10 @@ function upDependence(data) {
 	}
 }
 
-//Method that assign the listeners of the forms create and filter
+/**
+Method that assign the listeners of the forms create and filter
+ */
+
 function assignListenerForms() {
 	document.formC.species.addEventListener("change", changeSizeC);
 	document.formC.size.addEventListener("change", changeRaceC);

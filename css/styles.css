@@ -32,17 +32,20 @@ body {
 	
 }
 
+/* Height and width of the map */
+
 #mapC {
 
 	width: 70%;
 	height: 500px;
 }
-
+/* Height and width of the map */
 #mapU {
 	width: 70%;
 	height: 500px;
 }
 
+/*height, width of the image format and border of the marker*/
 .marker1 {
 	background-image: url('../Data/Huella.png');
 	background-size: cover;

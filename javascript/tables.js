@@ -28,7 +28,9 @@ function createBody(petsSubList, indice) {
 		th.textContent = (indice * 50) + i;
 		tr.appendChild(th);
 
-// The attributes of each object are obtained and converted into columns that are added to the row
+/**
+The attributes of each object are obtained and converted into columns that are added to the row
+ */ 
 
 		for (const property in petsSubList[i]) {
 			var td = document.createElement("td");
